@@ -43,12 +43,15 @@
             this.roomWindow1 = new QuanLyHotel.RoomWindow();
             this.customerWindow1 = new QuanLyHotel.CustomerWindow();
             this.accountWindow1 = new QuanLyHotel.AccountWindow();
+            this.button1 = new System.Windows.Forms.Button();
+            this.reportWindows1 = new QuanLyHotel.ReportWindows();
             this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.MenuBar.Controls.Add(this.button1);
             this.MenuBar.Controls.Add(this.btExpense);
             this.MenuBar.Controls.Add(this.btMenu);
             this.MenuBar.Controls.Add(this.btCustomer);
@@ -56,7 +59,6 @@
             this.MenuBar.Controls.Add(this.btRoom);
             this.MenuBar.Controls.Add(this.btHome);
             this.MenuBar.Controls.Add(this.btService);
-            this.MenuBar.Controls.Add(this.btReport);
             this.MenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Margin = new System.Windows.Forms.Padding(0);
@@ -204,7 +206,6 @@
             this.btService.UseCompatibleTextRendering = true;
             this.btService.UseVisualStyleBackColor = true;
             this.btService.Click += new System.EventHandler(this.BtService_Click);
-            
             // 
             // expenseWindow1
             // 
@@ -254,11 +255,40 @@
             this.accountWindow1.Size = new System.Drawing.Size(50, 50);
             this.accountWindow1.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::QuanLyHotel.Properties.Resources.serviceicon;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 448);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(193, 53);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Report";
+            this.button1.UseCompatibleTextRendering = true;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // reportWindows1
+            // 
+            this.reportWindows1.Location = new System.Drawing.Point(1082, 389);
+            this.reportWindows1.Margin = new System.Windows.Forms.Padding(4);
+            this.reportWindows1.Name = "reportWindows1";
+            this.reportWindows1.Size = new System.Drawing.Size(10, 10);
+            this.reportWindows1.TabIndex = 12;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 891);
+            this.Controls.Add(this.reportWindows1);
             this.Controls.Add(this.expenseWindow1);
             this.Controls.Add(this.homeWindow1);
             this.Controls.Add(this.serviceWindow1);
@@ -292,5 +322,7 @@
         private System.Windows.Forms.Button btExpense;
         private ExpenseWindow expenseWindow1;
         public System.Windows.Forms.Panel MenuBar;
+        private System.Windows.Forms.Button button1;
+        private ReportWindows reportWindows1;
     }
 }

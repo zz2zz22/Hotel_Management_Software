@@ -100,5 +100,11 @@ namespace QuanLyHotel
             expenseWindow1.BringToFront();
             expenseWindow1.Dock = DockStyle.Fill;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reportWindows1.BringToFront();
+            reportWindows1.Dock = DockStyle.Fill;
+        }
     }
 }

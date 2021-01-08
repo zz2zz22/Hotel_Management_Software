@@ -37,17 +37,23 @@ namespace QuanLyHotel
             foreach(DataGridViewRow row in dtgvService.Rows)
             {
                 double Expense_Cost = 0, Room_Cost = 0, Service_Cost = 0;
-                if(row.Cells[1].Value.ToString() == "Expense")
+                if (row.Cells[1].Value.ToString() == "Expense")
                 {
                     Expense_Cost += Double.Parse(row.Cells[3].Value.ToString());
                 }
-                if (row.Cells[1].Value.ToString() == "Room")
+                else
                 {
-                    Room_Cost += Double.Parse(row.Cells[3].Value.ToString());
-                }
-                if (row.Cells[1].Value.ToString() == "Service")
-                {
-                    Service_Cost += Double.Parse(row.Cells[3].Value.ToString());
+                    if (row.Cells[1].Value.ToString() == "Room")
+                    {
+                        Room_Cost += Double.Parse(row.Cells[3].Value.ToString());
+                    }
+                    else
+                    {
+                        if (row.Cells[1].Value.ToString() == "Service")
+                        {
+                            Service_Cost += Double.Parse(row.Cells[3].Value.ToString());
+                        }
+                    }
                 }
                 txtExpense.Text = Expense_Cost.ToString();
                 txtRoomCost.Text = Room_Cost.ToString();
