@@ -175,7 +175,7 @@
             this.dtCheckIn.Name = "dtCheckIn";
             this.dtCheckIn.Size = new System.Drawing.Size(199, 30);
             this.dtCheckIn.TabIndex = 210;
-            this.dtCheckIn.Value = new System.DateTime(2019, 10, 24, 0, 0, 0, 0);
+            this.dtCheckIn.Value = new System.DateTime(2021, 1, 8, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -328,7 +328,7 @@
             this.dtCheckOut.Name = "dtCheckOut";
             this.dtCheckOut.Size = new System.Drawing.Size(199, 30);
             this.dtCheckOut.TabIndex = 221;
-            this.dtCheckOut.Value = new System.DateTime(2019, 10, 24, 0, 0, 0, 0);
+            this.dtCheckOut.Value = new System.DateTime(2021, 1, 8, 0, 0, 0, 0);
             // 
             // label9
             // 

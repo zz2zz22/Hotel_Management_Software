@@ -62,7 +62,7 @@
             this.btCheckOut.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCheckOut.ForeColor = System.Drawing.Color.White;
             this.btCheckOut.Location = new System.Drawing.Point(325, 464);
-            this.btCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.btCheckOut.MaximumSize = new System.Drawing.Size(289, 42);
             this.btCheckOut.Name = "btCheckOut";
             this.btCheckOut.Size = new System.Drawing.Size(289, 42);
@@ -103,7 +103,7 @@
             this.lbSumCost.AutoSize = true;
             this.lbSumCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbSumCost.Location = new System.Drawing.Point(172, 386);
-            this.lbSumCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbSumCost.Margin = new System.Windows.Forms.Padding(4);
             this.lbSumCost.Name = "lbSumCost";
             this.lbSumCost.Size = new System.Drawing.Size(0, 23);
             this.lbSumCost.TabIndex = 270;
@@ -114,7 +114,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label25.Location = new System.Drawing.Point(23, 386);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.label25.Margin = new System.Windows.Forms.Padding(4);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(97, 23);
             this.label25.TabIndex = 269;
@@ -126,7 +126,7 @@
             this.lbCostService.AutoSize = true;
             this.lbCostService.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbCostService.Location = new System.Drawing.Point(172, 336);
-            this.lbCostService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbCostService.Margin = new System.Windows.Forms.Padding(4);
             this.lbCostService.Name = "lbCostService";
             this.lbCostService.Size = new System.Drawing.Size(0, 23);
             this.lbCostService.TabIndex = 268;
@@ -138,7 +138,7 @@
             this.lbCheckOut.AutoSize = true;
             this.lbCheckOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbCheckOut.Location = new System.Drawing.Point(172, 84);
-            this.lbCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.lbCheckOut.Name = "lbCheckOut";
             this.lbCheckOut.Size = new System.Drawing.Size(0, 23);
             this.lbCheckOut.TabIndex = 267;
@@ -149,7 +149,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label21.Location = new System.Drawing.Point(23, 84);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.label21.Margin = new System.Windows.Forms.Padding(4);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(109, 23);
             this.label21.TabIndex = 266;
@@ -161,7 +161,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label16.Location = new System.Drawing.Point(23, 336);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.label16.Margin = new System.Windows.Forms.Padding(4);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(124, 23);
             this.label16.TabIndex = 265;
@@ -174,7 +174,7 @@
             this.lbCostRoom.AutoSize = true;
             this.lbCostRoom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbCostRoom.Location = new System.Drawing.Point(172, 309);
-            this.lbCostRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbCostRoom.Margin = new System.Windows.Forms.Padding(4);
             this.lbCostRoom.Name = "lbCostRoom";
             this.lbCostRoom.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbCostRoom.Size = new System.Drawing.Size(0, 23);
@@ -200,7 +200,7 @@
             this.lbCheckIn.AutoSize = true;
             this.lbCheckIn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbCheckIn.Location = new System.Drawing.Point(172, 53);
-            this.lbCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.lbCheckIn.Name = "lbCheckIn";
             this.lbCheckIn.Size = new System.Drawing.Size(0, 23);
             this.lbCheckIn.TabIndex = 262;
@@ -211,7 +211,7 @@
             this.lbNameCustomer.AutoSize = true;
             this.lbNameCustomer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbNameCustomer.Location = new System.Drawing.Point(172, 229);
-            this.lbNameCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbNameCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.lbNameCustomer.Name = "lbNameCustomer";
             this.lbNameCustomer.Size = new System.Drawing.Size(0, 23);
             this.lbNameCustomer.TabIndex = 261;
@@ -222,7 +222,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(23, 53);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.label9.Margin = new System.Windows.Forms.Padding(4);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 23);
             this.label9.TabIndex = 260;
@@ -234,7 +234,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(23, 229);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.label6.Margin = new System.Windows.Forms.Padding(4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 23);
             this.label6.TabIndex = 259;
@@ -259,7 +259,7 @@
             this.lbNameRoom.AutoSize = true;
             this.lbNameRoom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbNameRoom.Location = new System.Drawing.Point(172, 149);
-            this.lbNameRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbNameRoom.Margin = new System.Windows.Forms.Padding(4);
             this.lbNameRoom.Name = "lbNameRoom";
             this.lbNameRoom.Size = new System.Drawing.Size(0, 23);
             this.lbNameRoom.TabIndex = 257;
@@ -270,7 +270,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(23, 149);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.label10.Margin = new System.Windows.Forms.Padding(4);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 23);
             this.label10.TabIndex = 256;
@@ -293,7 +293,7 @@
             // 
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Location = new System.Drawing.Point(395, 84);
-            this.dtgvBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgvBill.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.ReadOnly = true;
             this.dtgvBill.RowHeadersWidth = 51;
@@ -309,7 +309,7 @@
             this.btLoadCustomer.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Bold);
             this.btLoadCustomer.ForeColor = System.Drawing.Color.White;
             this.btLoadCustomer.Location = new System.Drawing.Point(856, 43);
-            this.btLoadCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLoadCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btLoadCustomer.Name = "btLoadCustomer";
             this.btLoadCustomer.Size = new System.Drawing.Size(143, 32);
             this.btLoadCustomer.TabIndex = 277;
@@ -322,7 +322,7 @@
             this.txtSearchBill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchBill.Font = new System.Drawing.Font("Times New Roman", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtSearchBill.Location = new System.Drawing.Point(483, 44);
-            this.txtSearchBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchBill.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchBill.MaxLength = 40;
             this.txtSearchBill.Name = "txtSearchBill";
             this.txtSearchBill.Size = new System.Drawing.Size(364, 31);
@@ -369,7 +369,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckOutWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();

@@ -197,6 +197,18 @@ namespace QuanLyHotel
                 this.loadData();
 
             }
+
+            string fileLPath = @"file.txt";
+            string[] lines;
+            string fileText = "";
+            lines = System.IO.File.ReadAllLines(fileLPath);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                fileText += lines[i] + "\n";
+            }
+            string str = fileText + lbNameService.Text + "\t" + "Service" + "\t" + dtDateService.Text + "\t" + lbCost.Text + "\t" + lbKindService.Text;
+
+            System.IO.File.WriteAllText(fileLPath, str);
             this.Close();
         }
         #endregion

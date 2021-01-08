@@ -32,6 +32,7 @@ namespace QuanLyHotel
             lbCost.Text = cost;
             //this.loadData();
         }
+        private bool isExsit = false;
         private CustomerBUS ctmBus;
         private RoomBUS rmBUS;
         private BillBUS bllBUS;
@@ -145,18 +146,21 @@ namespace QuanLyHotel
             decimal x = a.Days+1;
             decimal y = Decimal.Parse(lbCost.Text) * x;
 
-            ctmBus = new CustomerBUS();
-            CustomerDTO ctm = new CustomerDTO();
-            ctm.IDC = txtBoxCustomerName.Text;
-            ctm.NAME = txtBoxCustomerName.Text;
-            ctm.PHONE = txtBoxCustomerPhone.Text;
-            ctm.DATE = DateTime.Parse(dtCheckIn.Text);
-            ctm.CMND = txtBoxCustomerID.Text;
-            bool kq2 = ctmBus.add(ctm);
+            if (isExsit == false)
+            {
+                ctmBus = new CustomerBUS();
+                CustomerDTO ctm = new CustomerDTO();
+                ctm.IDC = txtBoxCustomerName.Text;
+                ctm.NAME = txtBoxCustomerName.Text;
+                ctm.PHONE = txtBoxCustomerPhone.Text;
+                ctm.DATE = DateTime.Parse(dtCheckIn.Text);
+                ctm.CMND = txtBoxCustomerID.Text;
+                bool kq2 = ctmBus.add(ctm);
+            }
 
             bllBUS = new BillBUS();
             BillDTO bll = new BillDTO();
-            bll.IDB = txtBoxCustomerName.Text+"/"+DateTime.Now.ToString("mm/dd/yyyy:mm:ss")+"/"+dtCheckOut.Text+"@"+txtBoxCustomerName.Text;
+            bll.IDB = DateTime.Now.ToString("mm/dd/yyyy:mm:ss");
             bll.IDC = txtBoxCustomerName.Text;
             bll.IDR = lbNameRoom.Text;
             bll.CheckIn =DateTime.Parse(dtCheckIn.Text);
@@ -181,8 +185,8 @@ namespace QuanLyHotel
                 else
                     MessageBox.Show("Sussces");
             }
-                
-            
+
+            isExsit = false;
             this.Close();
         }
 
@@ -192,7 +196,8 @@ namespace QuanLyHotel
             numrow = e.RowIndex;
             txtBoxCustomerName.Text = dtgvCustomer.Rows[numrow].Cells[0].Value.ToString();
             txtBoxCustomerID.Text = dtgvCustomer.Rows[numrow].Cells[1].Value.ToString();
-            txtBoxCustomerPhone.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();          
+            txtBoxCustomerPhone.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();
+            isExsit = true;
         }
 
         private void btLoadCustomer_Click(object sender, EventArgs e)

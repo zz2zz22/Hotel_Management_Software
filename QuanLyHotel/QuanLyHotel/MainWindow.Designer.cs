@@ -56,6 +56,7 @@
             this.MenuBar.Controls.Add(this.btRoom);
             this.MenuBar.Controls.Add(this.btHome);
             this.MenuBar.Controls.Add(this.btService);
+            this.MenuBar.Controls.Add(this.btReport);
             this.MenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Margin = new System.Windows.Forms.Padding(0);
@@ -203,6 +204,7 @@
             this.btService.UseCompatibleTextRendering = true;
             this.btService.UseVisualStyleBackColor = true;
             this.btService.Click += new System.EventHandler(this.BtService_Click);
+            
             // 
             // expenseWindow1
             // 

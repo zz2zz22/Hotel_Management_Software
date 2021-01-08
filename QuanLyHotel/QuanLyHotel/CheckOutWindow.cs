@@ -206,7 +206,19 @@ namespace QuanLyHotel
                 else
                     MessageBox.Show("Sussces");
             }
+            string fileLPath = @"file.txt";
+            string[] lines;
+            string fileText = "";
+            lines = System.IO.File.ReadAllLines(fileLPath);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                fileText += lines[i] + "\n";
+            }
+            string str = fileText + lbNameRoom.Text + "\t" + "Room" + "\t" + lbCheckOut.Text + "\t" + lbSumCost.Text + "\t" + lbNameCustomer.Text;
+
+            System.IO.File.WriteAllText(fileLPath, str);
             this.Close();
+
         }
 
         private void dtgvBill_CellClick(object sender, DataGridViewCellEventArgs e)

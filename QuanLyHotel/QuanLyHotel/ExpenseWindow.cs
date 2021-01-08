@@ -200,6 +200,17 @@ namespace QuanLyHotel
                     MessageBox.Show("Sussces");
                 this.loadData();
             }
+            string fileLPath = @"file.txt";
+            string[] lines;
+            string fileText = "";
+            lines = System.IO.File.ReadAllLines(fileLPath);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                fileText += lines[i] + "\n";
+            }
+            string str = fileText + txtNameExpense.Text + "\t" + "Expense" + "\t" + dtDateExpense.Text + "\t" + txtCostExpense.Text + "\t" + txtKindExpense.Text;
+
+            System.IO.File.WriteAllText(fileLPath, str);
         }
 
         private void BtEditExpense_Click(object sender, EventArgs e)
