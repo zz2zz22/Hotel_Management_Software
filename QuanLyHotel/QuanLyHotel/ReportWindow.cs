@@ -24,34 +24,28 @@ namespace QuanLyHotel
             if (System.IO.File.Exists(filePath))
             {
                 lines = System.IO.File.ReadAllLines(filePath);
+                double Expense_Cost = 0, Room_Cost = 0, Service_Cost = 0;
+
+                
                 for (int i = 0; i < lines.Length; i++)
                 {
                     dtgvService.Rows.Add(lines[i].Split());
-                    
-                }
-            }
-            else
-            {
-
-            }
-            foreach(DataGridViewRow row in dtgvService.Rows)
-            {
-                double Expense_Cost = 0, Room_Cost = 0, Service_Cost = 0;
-                if (row.Cells[1].Value.ToString() == "Expense")
-                {
-                    Expense_Cost += Double.Parse(row.Cells[3].Value.ToString());
-                }
-                else
-                {
-                    if (row.Cells[1].Value.ToString() == "Room")
+                    if (dtgvService.Rows[i].Cells[1].Value.ToString() == "Expense")
                     {
-                        Room_Cost += Double.Parse(row.Cells[3].Value.ToString());
+                        Expense_Cost += Double.Parse(dtgvService.Rows[i].Cells[3].Value.ToString());
                     }
                     else
                     {
-                        if (row.Cells[1].Value.ToString() == "Service")
+                        if (dtgvService.Rows[i].Cells[1].Value.ToString() == "Room")
                         {
-                            Service_Cost += Double.Parse(row.Cells[3].Value.ToString());
+                            Room_Cost += Double.Parse(dtgvService.Rows[i].Cells[3].Value.ToString());
+                        }
+                        else
+                        {
+                            if (dtgvService.Rows[i].Cells[1].Value.ToString() == "Service")
+                            {
+                                Service_Cost += Double.Parse(dtgvService.Rows[i].Cells[3].Value.ToString());
+                            }
                         }
                     }
                 }
@@ -59,7 +53,12 @@ namespace QuanLyHotel
                 txtRoomCost.Text = Room_Cost.ToString();
                 txtServiceCost.Text = Service_Cost.ToString();
                 txtSumCost.Text = (Expense_Cost + Room_Cost + Service_Cost).ToString();
-            }    
+            }
+            else
+            {
+
+            }
+              
         }
     }
 }
