@@ -49,7 +49,7 @@ namespace QuanLyHotel
                 Button btn = new Button() { Width = RoomDAO.RoomWidth, Height = RoomDAO.RoomHeigh };
 
                 // Thêm thuộc tính lên btn trong flow layout panel
-                btn.Text = item.Name + Environment.NewLine + item.Status;
+                btn.Text = item.Name + Environment.NewLine + item.Status + Environment.NewLine + "(" + item.Roomkind.ToUpper() + ")";
 
                 btn.Click += btn_Click;
                 btn.Tag = item;
