@@ -140,18 +140,33 @@ namespace QuanLyHotel
         #region Events
         private void BtCheckIn_Click(object sender, EventArgs e)
         {
+
             TimeSpan a = dtCheckOut.Value.Subtract(dtCheckIn.Value);
             decimal x = a.Days+1;
             decimal y = Decimal.Parse(lbCost.Text) * x;
+
+            ctmBus = new CustomerBUS();
+            CustomerDTO ctm = new CustomerDTO();
+            ctm.IDC = txtBoxCustomerName.Text;
+            ctm.NAME = txtBoxCustomerName.Text;
+            ctm.PHONE = txtBoxCustomerPhone.Text;
+            ctm.DATE = DateTime.Parse(dtCheckIn.Text);
+            ctm.CMND = txtBoxCustomerID.Text;
+            bool kq2 = ctmBus.add(ctm);
+
             bllBUS = new BillBUS();
             BillDTO bll = new BillDTO();
-            bll.IDB = lbNameCustomer.Text+"/"+dtCheckIn.Text+"/"+dtCheckOut.Text+"@"+lbNameCustomer.Text;
-            bll.IDC = lbNameCustomer.Text;
+            bll.IDB = txtBoxCustomerName.Text+"/"+DateTime.Now.ToString("mm/dd/yyyy:mm:ss")+"/"+dtCheckOut.Text+"@"+txtBoxCustomerName.Text;
+            bll.IDC = txtBoxCustomerName.Text;
             bll.IDR = lbNameRoom.Text;
             bll.CheckIn =DateTime.Parse(dtCheckIn.Text);
             bll.CheckOut =DateTime.Parse(dtCheckOut.Text);
             bll.COST = Decimal.Parse(lbCost.Text) * x;
             bool kq = bllBUS.add(bll);
+
+            
+
+
             if (kq == false)
                 MessageBox.Show("Fail!");
             else
@@ -175,9 +190,9 @@ namespace QuanLyHotel
         {
             int numrow;
             numrow = e.RowIndex;
-            lbNameCustomer.Text = dtgvCustomer.Rows[numrow].Cells[0].Value.ToString();
-            lbIdentifyCard.Text = dtgvCustomer.Rows[numrow].Cells[1].Value.ToString();
-            lbPhone.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();          
+            txtBoxCustomerName.Text = dtgvCustomer.Rows[numrow].Cells[0].Value.ToString();
+            txtBoxCustomerID.Text = dtgvCustomer.Rows[numrow].Cells[1].Value.ToString();
+            txtBoxCustomerPhone.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();          
         }
 
         private void btLoadCustomer_Click(object sender, EventArgs e)
