@@ -77,7 +77,7 @@ namespace QuanLyHotel
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvService.DataSource];
             myCurrencyManager.Refresh();
 
-
+            
         }
         private void loadData(List<ServiceDTO> list)
         {
@@ -554,9 +554,12 @@ namespace QuanLyHotel
         {
             int numrow;
             numrow = e.RowIndex;
-            txtNameService.Text = dtgvService.Rows[numrow].Cells[0].Value.ToString();
-            txtKindService.Text = dtgvService.Rows[numrow].Cells[1].Value.ToString();
-            txtCostService.Text = dtgvService.Rows[numrow].Cells[2].Value.ToString();
+            if(numrow > -1)
+            {
+                txtNameService.Text = dtgvService.Rows[numrow].Cells[0].Value.ToString();
+                txtKindService.Text = dtgvService.Rows[numrow].Cells[1].Value.ToString();
+                txtCostService.Text = dtgvService.Rows[numrow].Cells[2].Value.ToString();
+            }              
         }
     }
 }

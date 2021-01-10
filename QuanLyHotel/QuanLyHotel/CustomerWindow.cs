@@ -155,10 +155,13 @@ namespace QuanLyHotel
         {
             int numrow;
             numrow = e.RowIndex;
-            txtNameCustomer.Text = dtgvCustomer.Rows[numrow].Cells[0].Value.ToString();
-            txtIdentifyCardCustomer.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();
-            txtPhoneCustomer.Text = dtgvCustomer.Rows[numrow].Cells[3].Value.ToString();
-            dtBirthday.Text = Convert.ToString(dtgvCustomer.Rows[numrow].Cells[1].Value);
+            if(numrow > -1)
+            {
+                txtNameCustomer.Text = dtgvCustomer.Rows[numrow].Cells[0].Value.ToString();
+                txtIdentifyCardCustomer.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();
+                txtPhoneCustomer.Text = dtgvCustomer.Rows[numrow].Cells[3].Value.ToString();
+                dtBirthday.Text = Convert.ToString(dtgvCustomer.Rows[numrow].Cells[1].Value);
+            }              
         }
 
         private void TxtPhoneCustomer_KeyPress(object sender, KeyPressEventArgs e)

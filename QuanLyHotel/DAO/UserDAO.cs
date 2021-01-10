@@ -104,7 +104,9 @@ namespace userDAO
         public bool edit(UserDTO us)
         {
             string query = string.Empty;
+            //sửa update
             query += "UPDATE manager SET [name] = @name, [phone] = @phone, [email] = @email,[level] = @level,[gender] = @gender,[cmnd] = @cmnd  WHERE [idm] = @idm";
+            //query += "UPDATE manager SET [name] = @name, [phone] = @phone, [email] = @email,[gender] = @gender,[cmnd] = @cmnd  WHERE [idm] = @idm";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
