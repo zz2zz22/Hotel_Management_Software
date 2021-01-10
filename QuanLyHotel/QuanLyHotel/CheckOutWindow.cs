@@ -89,7 +89,12 @@ namespace QuanLyHotel
             CheckOut.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvBill.Columns.Add(CheckOut);
 
-
+            DataGridViewTextBoxColumn IDB = new DataGridViewTextBoxColumn();
+            IDB.Name = "idb";
+            IDB.HeaderText = "Invoice";
+            IDB.DataPropertyName = "idb";
+            IDB.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgvBill.Columns.Add(IDB);
 
 
             //CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
@@ -151,6 +156,13 @@ namespace QuanLyHotel
             CheckOut.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvBill.Columns.Add(CheckOut);
 
+            DataGridViewTextBoxColumn IDB = new DataGridViewTextBoxColumn();
+            IDB.Name = "idb";
+            IDB.HeaderText = "Invoice";
+            IDB.DataPropertyName = "idb";
+            IDB.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgvBill.Columns.Add(IDB);
+
 
             //CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
@@ -205,45 +217,75 @@ namespace QuanLyHotel
             srvBUS = new RoomServiceBUS();
             RoomServiceDTO srv = new RoomServiceDTO();
             srv.IDR = lbNameRoom.Text;
-            
 
-            //Xem lại checkout nên Delete chứ kg add new hay edit cost hoặc status nếu đc
-            bllBus = new BillBUS();
-            BillDTO bll = new BillDTO();
-            bll.IDC = lbNameCustomer.Text;
-            bll.IDR = lbNameRoom.Text;
-            bll.CheckIn = DateTime.Parse(lbCheckIn.Text);
-            bll.CheckOut = DateTime.Parse(lbCheckOut.Text);
-            lbCostRoom.Text = bll.COST.ToString();
-            bll.COST = Decimal.Parse(lbCostRoom.Text);
-            bool kq = bllBus.editCost(bll);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            if (lbCheckIn.Text == "")
+            {
+                if (lbCheckOut.Text == "")
+                {
+                    if (lbIDB.Text == "")
+                    {
+                        if (lbNameRoom.Text == "")
+                        {
+                            if (lbNameCustomer.Text == "")
+                            {
+                                if (lbCostRoom.Text == "")
+                                {
+                                    if (lbCostService.Text == "")
+                                    {
+                                        if (lbSumCost.Text == "")
+                                        {
+                                            MessageBox.Show("Chưa chọn phòng cần checkout trước !");
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                        
+                    }
+                }
+
+            }
             else
             {
-                rmBUS = new RoomBUS();
-                RoomDTO rm = new RoomDTO();
-                rm.Idr = lbNameRoom.Text;
-                rm.Status = "Trống";
-                bool kq1 = rmBUS.editStatus(rm);
+                //Xem lại checkout nên Delete chứ kg add new hay edit cost hoặc status nếu đc
+                bllBus = new BillBUS();
+                BillDTO bll = new BillDTO();
+                bll.IDB = lbIDB.Text;
+                bll.IDC = lbNameCustomer.Text;
+                bll.IDR = lbNameRoom.Text;
+                bll.CheckIn = DateTime.Parse(lbCheckIn.Text);
+                bll.CheckOut = DateTime.Parse(lbCheckOut.Text);
+                lbCostRoom.Text = bll.COST.ToString();
+                bll.COST = Decimal.Parse(lbCostRoom.Text);
+                bool kq = bllBus.delete(bll);
                 if (kq == false)
                     MessageBox.Show("Fail!");
                 else
-                    MessageBox.Show("Sussces");
-            }
-            string fileLPath = @"file.txt";
-            string[] lines;
-            string fileText = "";
-            lines = System.IO.File.ReadAllLines(fileLPath);
-            for (int i = 0; i < lines.Length; i++)
-            {
-                fileText += lines[i] + "\n";
-            }
-            string str = fileText + lbNameRoom.Text + "\t" + "Room" + "\t" + lbCheckOut.Text + "\t" + lbSumCost.Text + "\t" + lbNameCustomer.Text;
+                {
+                    rmBUS = new RoomBUS();
+                    RoomDTO rm = new RoomDTO();
+                    rm.Idr = lbNameRoom.Text;
+                    rm.Status = "Trống";
+                    bool kq1 = rmBUS.editStatus(rm);
+                    if (kq == false)
+                        MessageBox.Show("Fail!");
+                    else
+                        MessageBox.Show("Sussces");
+                }
+                string fileLPath = @"file.txt";
+                string[] lines;
+                string fileText = "";
+                lines = System.IO.File.ReadAllLines(fileLPath);
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    fileText += lines[i] + "\n";
+                }
+                string str = fileText + lbNameRoom.Text + "\t" + "Room" + "\t" + lbCheckOut.Text + "\t" + lbSumCost.Text + "\t" + lbNameCustomer.Text;
 
-            System.IO.File.WriteAllText(fileLPath, str);
-            this.Close();
-
+                System.IO.File.WriteAllText(fileLPath, str);
+                this.Close();
+            }   
         }
 
         private void dtgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -257,9 +299,15 @@ namespace QuanLyHotel
                 lbSumCost.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[2].Value);
                 lbCheckIn.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[3].Value);
                 lbCheckOut.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[4].Value);
+                lbIDB.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[5].Value);
             }    
             
         }
         #endregion
+
+        private void CheckOutWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
+        }
     }
 }

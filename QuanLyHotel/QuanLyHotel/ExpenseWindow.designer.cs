@@ -58,7 +58,6 @@
             // 
             // txtSearchExpense
             // 
-            this.txtSearchExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSearchExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchExpense.Location = new System.Drawing.Point(120, 284);
             this.txtSearchExpense.Margin = new System.Windows.Forms.Padding(4);
@@ -69,7 +68,6 @@
             // 
             // btLoadExpense
             // 
-            this.btLoadExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btLoadExpense.BackColor = System.Drawing.Color.Firebrick;
             this.btLoadExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLoadExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,7 +83,6 @@
             // 
             // btDeleteExpense
             // 
-            this.btDeleteExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btDeleteExpense.BackColor = System.Drawing.Color.Firebrick;
             this.btDeleteExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDeleteExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,7 +98,6 @@
             // 
             // btEditExpense
             // 
-            this.btEditExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btEditExpense.BackColor = System.Drawing.Color.Firebrick;
             this.btEditExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,7 +113,6 @@
             // 
             // btAddExpense
             // 
-            this.btAddExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btAddExpense.BackColor = System.Drawing.Color.Firebrick;
             this.btAddExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAddExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,9 +128,11 @@
             // 
             // txtKindExpense
             // 
-            this.txtKindExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtKindExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtKindExpense.FormattingEnabled = true;
+            this.txtKindExpense.Items.AddRange(new object[] {
+            "Hàng tháng",
+            "Hàng ngày"});
             this.txtKindExpense.Location = new System.Drawing.Point(148, 126);
             this.txtKindExpense.Margin = new System.Windows.Forms.Padding(4);
             this.txtKindExpense.MaxLength = 40;
@@ -145,7 +142,6 @@
             // 
             // txtNameExpense
             // 
-            this.txtNameExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNameExpense.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.txtNameExpense.Location = new System.Drawing.Point(148, 84);
             this.txtNameExpense.Margin = new System.Windows.Forms.Padding(4);
@@ -157,11 +153,10 @@
             // 
             // label16
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(20, 12);
+            this.label16.Location = new System.Drawing.Point(19, 30);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(323, 38);
@@ -170,7 +165,6 @@
             // 
             // label19
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.label19.Location = new System.Drawing.Point(23, 87);
@@ -182,7 +176,6 @@
             // 
             // label18
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.label18.Location = new System.Drawing.Point(376, 129);
@@ -194,7 +187,6 @@
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(23, 130);
@@ -206,7 +198,8 @@
             // 
             // dtgvExpense
             // 
-            this.dtgvExpense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtgvExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvExpense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvExpense.Location = new System.Drawing.Point(28, 327);
@@ -220,7 +213,6 @@
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(23, 289);
@@ -232,7 +224,6 @@
             // 
             // dtDateExpense
             // 
-            this.dtDateExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtDateExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.dtDateExpense.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDateExpense.Location = new System.Drawing.Point(463, 127);
@@ -244,7 +235,6 @@
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.label12.Location = new System.Drawing.Point(23, 176);
@@ -272,7 +262,6 @@
             // 
             // txtCostExpense
             // 
-            this.txtCostExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCostExpense.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.txtCostExpense.Location = new System.Drawing.Point(149, 174);
             this.txtCostExpense.Margin = new System.Windows.Forms.Padding(4);
@@ -281,6 +270,7 @@
             this.txtCostExpense.Name = "txtCostExpense";
             this.txtCostExpense.Size = new System.Drawing.Size(599, 34);
             this.txtCostExpense.TabIndex = 213;
+            this.txtCostExpense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostExpense_KeyPress_1);
             // 
             // ExpenseWindow
             // 
@@ -305,6 +295,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ExpenseWindow";
             this.Size = new System.Drawing.Size(1283, 682);
+            this.Load += new System.EventHandler(this.ExpenseWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();

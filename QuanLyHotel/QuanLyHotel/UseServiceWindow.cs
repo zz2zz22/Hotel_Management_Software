@@ -201,6 +201,7 @@ namespace QuanLyHotel
                     roomService.TIME = DateTime.Parse(dtDateService.Text);
                     roomService.NUMBER = int.Parse(txtNumberService.Text);
                     roomService.COST = Decimal.Parse(lbCost.Text) * Decimal.Parse(txtNumberService.Text);
+                    decimal Totalcost = Decimal.Parse(lbCost.Text) * Decimal.Parse(txtNumberService.Text);
                     bool kq = roomServiceBUS.add(roomService);
                     if (kq == false)
                         MessageBox.Show("Fail!");
@@ -217,7 +218,7 @@ namespace QuanLyHotel
                     {
                         fileText += lines[i] + "\n";
                     }
-                    string str = fileText + lbNameService.Text + "\t" + "Service" + "\t" + dtDateService.Text + "\t" + lbCost.Text + "\t" + lbKindService.Text;
+                    string str = fileText + lbNameService.Text + "\t" + "Service" + "\t" + dtDateService.Text + "\t" + Totalcost.ToString() + "\t" + lbKindService.Text;
 
                     System.IO.File.WriteAllText(fileLPath, str);
 
@@ -226,6 +227,11 @@ namespace QuanLyHotel
                     this.Close();
                 }
             }
+        }
+
+        private void UseServiceWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
         }
 
         #endregion

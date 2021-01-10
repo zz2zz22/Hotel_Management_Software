@@ -538,14 +538,15 @@ namespace QuanLyHotel
 
         private void ServiceWindow_Load(object sender, EventArgs e)
         {
-            srvBUS = new ServiceBUS();
-            List<ServiceDTO> listKind = srvBUS.selectKind();
-            if (listKind == null)
-            {
-                MessageBox.Show("Có lỗi khi lấy thông tin từ table Kind");
-                return;
-            }
-            txtKindService.DataSource = listKind;
+            this.loadData();
+            //srvBUS = new ServiceBUS();
+            //List<ServiceDTO> listKind = srvBUS.selectKind();
+            //if (listKind == null)
+            //{
+            //    MessageBox.Show("Có lỗi khi lấy thông tin từ table Kind");
+            //    return;
+            //}
+            //txtKindService.DataSource = listKind;
         }
 
         
@@ -560,6 +561,20 @@ namespace QuanLyHotel
                 txtKindService.Text = dtgvService.Rows[numrow].Cells[1].Value.ToString();
                 txtCostService.Text = dtgvService.Rows[numrow].Cells[2].Value.ToString();
             }              
+        }
+
+        private void txtCostService_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            int keydown = e.KeyChar;
+            if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
+            {
+                errorProvider3.SetError(txtCostService, "Không được nhập chữ");
+                e.KeyChar = (char)0;
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
         }
     }
 }

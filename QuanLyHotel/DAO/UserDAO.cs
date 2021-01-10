@@ -105,8 +105,8 @@ namespace userDAO
         {
             string query = string.Empty;
             //sửa update
-            query += "UPDATE manager SET [name] = @name, [phone] = @phone, [email] = @email,[level] = @level,[gender] = @gender,[cmnd] = @cmnd  WHERE [idm] = @idm";
-            //query += "UPDATE manager SET [name] = @name, [phone] = @phone, [email] = @email,[gender] = @gender,[cmnd] = @cmnd  WHERE [idm] = @idm";
+            query += "UPDATE manager SET [name] = @name,[password] = @password ,[phone] = @phone, [email] = @email,[level] = @level,[gender] = @gender,[cmnd] = @cmnd  WHERE [idm] = @idm";
+            
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
 
@@ -114,6 +114,7 @@ namespace userDAO
                 {
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@idm", us.Idm);
                     cmd.Parameters.AddWithValue("@name", us.Name);
                     cmd.Parameters.AddWithValue("@password", us.Password);
@@ -326,9 +327,12 @@ namespace userDAO
         public List<UserDTO> search(string Keyword)
         {
             string query = string.Empty;
-            query += "SELECT [name], [phone], [email], [gender], [cmnd]";
+            query += "SELECT [idm],[password],[name], [phone], [email], [gender], [cmnd],[level]";
             query += "FROM [manager]";
             query += " WHERE ([name] LIKE CONCAT('%',@Keyword,'%'))";
+            query += " OR ([idm] LIKE CONCAT('%',@Keyword,'%'))";
+            query += " OR ([password] LIKE CONCAT('%',@Keyword,'%'))";
+            query += " OR ([level] LIKE CONCAT('%',@Keyword,'%'))";
             query += " OR ([phone] LIKE CONCAT('%',@Keyword,'%'))";
             query += " OR ([email] LIKE CONCAT('%',@Keyword,'%'))";
             query += " OR ([gender] LIKE CONCAT('%',@Keyword,'%'))";
@@ -355,6 +359,9 @@ namespace userDAO
                             while (reader.Read())
                             {
                                 UserDTO mng = new UserDTO();
+                                mng.Idm = reader["idm"].ToString();
+                                mng.Password = reader["password"].ToString();
+                                mng.Level = Convert.ToInt32(reader["level"].ToString());
                                 mng.Name = reader["name"].ToString();
                                 mng.Phone = reader["phone"].ToString();
                                 mng.Email = reader["email"].ToString();

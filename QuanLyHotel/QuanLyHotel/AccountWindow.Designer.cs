@@ -128,7 +128,7 @@
             this.btDeleteAcount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDeleteAcount.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDeleteAcount.ForeColor = System.Drawing.Color.White;
-            this.btDeleteAcount.Location = new System.Drawing.Point(144, 516);
+            this.btDeleteAcount.Location = new System.Drawing.Point(149, 468);
             this.btDeleteAcount.Margin = new System.Windows.Forms.Padding(4);
             this.btDeleteAcount.Name = "btDeleteAcount";
             this.btDeleteAcount.Size = new System.Drawing.Size(99, 38);
@@ -144,7 +144,7 @@
             this.btEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditAccount.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEditAccount.ForeColor = System.Drawing.Color.White;
-            this.btEditAccount.Location = new System.Drawing.Point(21, 516);
+            this.btEditAccount.Location = new System.Drawing.Point(26, 468);
             this.btEditAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btEditAccount.Name = "btEditAccount";
             this.btEditAccount.Size = new System.Drawing.Size(99, 38);
@@ -158,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 112);
+            this.label3.Location = new System.Drawing.Point(19, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(323, 38);
@@ -169,7 +169,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label.Location = new System.Drawing.Point(19, 256);
+            this.label.Location = new System.Drawing.Point(22, 194);
             this.label.Margin = new System.Windows.Forms.Padding(4);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(79, 26);
@@ -180,7 +180,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(19, 296);
+            this.label18.Location = new System.Drawing.Point(22, 234);
             this.label18.Margin = new System.Windows.Forms.Padding(4);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(97, 26);
@@ -191,7 +191,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(19, 416);
+            this.label15.Location = new System.Drawing.Point(22, 354);
             this.label15.Margin = new System.Windows.Forms.Padding(4);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(153, 26);
@@ -202,7 +202,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(19, 336);
+            this.label1.Location = new System.Drawing.Point(22, 274);
             this.label1.Margin = new System.Windows.Forms.Padding(4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 26);
@@ -213,7 +213,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(19, 376);
+            this.label2.Location = new System.Drawing.Point(22, 314);
             this.label2.Margin = new System.Windows.Forms.Padding(4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 26);
@@ -224,7 +224,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(19, 176);
+            this.label4.Location = new System.Drawing.Point(22, 114);
             this.label4.Margin = new System.Windows.Forms.Padding(4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 26);
@@ -235,7 +235,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(19, 216);
+            this.label7.Location = new System.Drawing.Point(22, 154);
             this.label7.Margin = new System.Windows.Forms.Padding(4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 26);
@@ -245,7 +245,7 @@
             // lbUsername
             // 
             this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsername.Location = new System.Drawing.Point(185, 177);
+            this.lbUsername.Location = new System.Drawing.Point(188, 115);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.ReadOnly = true;
             this.lbUsername.Size = new System.Drawing.Size(322, 30);
@@ -254,7 +254,7 @@
             // lbPassword
             // 
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.Location = new System.Drawing.Point(185, 213);
+            this.lbPassword.Location = new System.Drawing.Point(188, 151);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(322, 30);
             this.lbPassword.TabIndex = 219;
@@ -262,7 +262,7 @@
             // lbName
             // 
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(185, 253);
+            this.lbName.Location = new System.Drawing.Point(188, 191);
             this.lbName.Name = "lbName";
             this.lbName.ReadOnly = true;
             this.lbName.Size = new System.Drawing.Size(322, 30);
@@ -271,15 +271,16 @@
             // lbPhone
             // 
             this.lbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone.Location = new System.Drawing.Point(185, 332);
+            this.lbPhone.Location = new System.Drawing.Point(188, 270);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(322, 30);
             this.lbPhone.TabIndex = 222;
+            this.lbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lbPhone_KeyPress);
             // 
             // lbEmail
             // 
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(185, 373);
+            this.lbEmail.Location = new System.Drawing.Point(188, 311);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(322, 30);
             this.lbEmail.TabIndex = 223;
@@ -287,7 +288,7 @@
             // lbCmnd
             // 
             this.lbCmnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCmnd.Location = new System.Drawing.Point(185, 413);
+            this.lbCmnd.Location = new System.Drawing.Point(188, 351);
             this.lbCmnd.Name = "lbCmnd";
             this.lbCmnd.Size = new System.Drawing.Size(322, 30);
             this.lbCmnd.TabIndex = 224;
@@ -299,7 +300,7 @@
             this.lbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.lbGender.Location = new System.Drawing.Point(185, 293);
+            this.lbGender.Location = new System.Drawing.Point(188, 231);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(322, 33);
             this.lbGender.TabIndex = 225;
@@ -308,7 +309,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(19, 456);
+            this.label6.Location = new System.Drawing.Point(22, 394);
             this.label6.Margin = new System.Windows.Forms.Padding(4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 26);
@@ -318,10 +319,11 @@
             // lbLevel
             // 
             this.lbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLevel.Location = new System.Drawing.Point(185, 453);
+            this.lbLevel.Location = new System.Drawing.Point(188, 391);
             this.lbLevel.Name = "lbLevel";
             this.lbLevel.Size = new System.Drawing.Size(322, 30);
             this.lbLevel.TabIndex = 227;
+            this.lbLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lbLevel_KeyPress);
             // 
             // errorProvider1
             // 
@@ -377,6 +379,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AccountWindow";
             this.Size = new System.Drawing.Size(1283, 999);
+            this.Load += new System.EventHandler(this.AccountWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();

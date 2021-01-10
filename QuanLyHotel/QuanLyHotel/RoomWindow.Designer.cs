@@ -78,7 +78,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(15, 10);
+            this.label3.Location = new System.Drawing.Point(19, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(291, 38);
@@ -330,6 +330,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RoomWindow";
             this.Size = new System.Drawing.Size(1325, 745);
+            this.Load += new System.EventHandler(this.RoomWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();

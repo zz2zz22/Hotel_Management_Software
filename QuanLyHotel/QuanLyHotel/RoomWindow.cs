@@ -357,5 +357,10 @@ namespace QuanLyHotel
                 }
             }
         }
+
+        private void RoomWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
+        }
     }
 }

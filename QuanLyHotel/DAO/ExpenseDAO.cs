@@ -257,7 +257,7 @@ namespace expenseDAO
                             while (reader.Read())
                             {
                                 ExpenseDTO srv = new ExpenseDTO();
-                                srv.IDE = reader["ids"].ToString();
+                                srv.IDE = reader["ide"].ToString();
                                 srv.NAME = reader["name"].ToString();
                                 srv.KIND = reader["kind"].ToString();
                                 srv.DATE = DateTime.Parse(reader["date"].ToString());

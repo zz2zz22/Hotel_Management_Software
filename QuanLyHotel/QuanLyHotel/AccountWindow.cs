@@ -257,6 +257,15 @@ namespace QuanLyHotel
                 else
                     MessageBox.Show("Sussces");
                 this.loadData();
+                //Us.Idm = txtUsername.Text;
+                //Us.Name = txtName.Text;
+                //Us.Password = txtPassword.Text;
+                //Us.Phone = txtPhone.Text;
+                //Us.Email = txtEmail.Text;
+                //Us.Gender = txtGender.Text;
+                //Us.Cmnd = txtIdentifyCard.Text;
+                //Us.Level = 1;
+                //bool kq = UsBus.add(Us);
             }    
             
         }
@@ -335,5 +344,38 @@ namespace QuanLyHotel
             
         }
         #endregion
+
+        private void lbPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int keydown = e.KeyChar;
+            if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
+            {
+                errorProvider3.SetError(lbPhone, "Không được nhập chữ");
+                e.KeyChar = (char)0;
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+        }
+
+        private void lbLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int keydown = e.KeyChar;
+            if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
+            {
+                errorProvider6.SetError(lbLevel, "Không được nhập chữ");
+                e.KeyChar = (char)0;
+            }
+            else
+            {
+                errorProvider6.Clear();
+            }
+        }
+
+        private void AccountWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
+        }
     }
 }

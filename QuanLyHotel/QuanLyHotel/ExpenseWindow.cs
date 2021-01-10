@@ -126,19 +126,7 @@ namespace QuanLyHotel
         // EVENT
         //
         #region Event
-        private void TxtCostExpense_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int keydown = e.KeyChar;
-            if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
-            {
-                errorProvider4.SetError(txtCostExpense, "Không được nhập chữ");
-                e.KeyChar = (char)0;
-            }
-            else
-            {
-                errorProvider4.Clear();
-            }
-        }
+        
 
         private void BtLoadExpense_Click(object sender, EventArgs e)
         {
@@ -198,19 +186,21 @@ namespace QuanLyHotel
                     MessageBox.Show("Fail!");
                 else
                     MessageBox.Show("Sussces");
+
+                string fileLPath = @"file.txt";
+                string[] lines;
+                string fileText = "";
+                lines = System.IO.File.ReadAllLines(fileLPath);
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    fileText += lines[i] + "\n";
+                }
+                string str = fileText + txtNameExpense.Text + "\t" + "Expense" + "\t" + dtDateExpense.Text + "\t" + txtCostExpense.Text + "\t" + txtKindExpense.Text;
+
+                System.IO.File.WriteAllText(fileLPath, str);
+
                 this.loadData();
             }
-            string fileLPath = @"file.txt";
-            string[] lines;
-            string fileText = "";
-            lines = System.IO.File.ReadAllLines(fileLPath);
-            for (int i = 0; i < lines.Length; i++)
-            {
-                fileText += lines[i] + "\n";
-            }
-            string str = fileText + txtNameExpense.Text + "\t" + "Expense" + "\t" + dtDateExpense.Text + "\t" + txtCostExpense.Text + "\t" + txtKindExpense.Text;
-
-            System.IO.File.WriteAllText(fileLPath, str);
         }
 
         private void BtEditExpense_Click(object sender, EventArgs e)
@@ -308,6 +298,25 @@ namespace QuanLyHotel
                 txtCostExpense.Text = Convert.ToString(dtgvExpense.Rows[numrow].Cells[3].Value);
                 dtDateExpense.Text = Convert.ToString(dtgvExpense.Rows[numrow].Cells[2].Value);
             }    
+        }
+
+        private void txtCostExpense_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            int keydown = e.KeyChar;
+            if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
+            {
+                errorProvider3.SetError(txtCostExpense, "Không được nhập chữ");
+                e.KeyChar = (char)0;
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+        }
+
+        private void ExpenseWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
         }
     }
 }

@@ -138,6 +138,8 @@ namespace QuanLyHotel
         //
         //---- EVENTS
         //
+
+        
         #region Events
         private void BtCheckIn_Click(object sender, EventArgs e)
         {
@@ -145,6 +147,7 @@ namespace QuanLyHotel
             errorProvider2.Clear();
             errorProvider3.Clear();
             TimeSpan a = dtCheckOut.Value.Subtract(dtCheckIn.Value);
+            
             if (txtBoxCustomerName.Text == "")
             {
                 errorProvider1.SetError(txtBoxCustomerName, "not null!");
@@ -162,14 +165,26 @@ namespace QuanLyHotel
                 //ko bấm load
                 if (isExsit == false)
                 {
-                    ctmBus = new CustomerBUS();
-                    CustomerDTO ctm = new CustomerDTO();
-                    ctm.IDC = txtBoxCustomerName.Text;
-                    ctm.NAME = txtBoxCustomerName.Text;
-                    ctm.PHONE = txtBoxCustomerPhone.Text;
-                    ctm.DATE = DateTime.Parse(dtCheckIn.Text);
-                    ctm.CMND = txtBoxCustomerID.Text;
-                    bool kq2 = ctmBus.add(ctm);
+                    foreach (DataGridViewRow row in dtgvCustomer.Rows)
+                    {
+                        //click vào load nhưng trùng tên
+                        if (row.Cells[0].Value.ToString() == txtBoxCustomerName.Text)
+                        {
+                            nameCheck = true;
+                            MessageBox.Show("Khách hàng đã tồn tại, sẽ dùng dữ liệu đã tồn tại của khách hàng!");
+                        }
+                    }
+                    if (nameCheck == false)
+                    {
+                        ctmBus = new CustomerBUS();
+                        CustomerDTO ctm = new CustomerDTO();
+                        ctm.IDC = txtBoxCustomerName.Text;
+                        ctm.NAME = txtBoxCustomerName.Text;
+                        ctm.PHONE = txtBoxCustomerPhone.Text;
+                        ctm.DATE = DateTime.Parse(dtCheckIn.Text);
+                        ctm.CMND = txtBoxCustomerID.Text;
+                        bool kq2 = ctmBus.add(ctm);
+                    }
                 }
                 //bấm load
                 if (isExsit == true)
@@ -220,7 +235,7 @@ namespace QuanLyHotel
                     decimal y = Decimal.Parse(lbCost.Text) * x;
                     bllBUS = new BillBUS();
                     BillDTO bll = new BillDTO();
-                    bll.IDB = DateTime.Now.ToString("mm/dd/yyyy:mm:ss");
+                    bll.IDB = DateTime.Now.ToString();
                     bll.IDC = txtBoxCustomerName.Text;
                     bll.IDR = lbNameRoom.Text;
                     bll.CheckIn = DateTime.Parse(dtCheckIn.Text);
@@ -262,6 +277,11 @@ namespace QuanLyHotel
                 isExsit = true;
             }    
             
+        }
+
+        private void CheckInWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
         }
 
         private void btLoadCustomer_Click(object sender, EventArgs e)
