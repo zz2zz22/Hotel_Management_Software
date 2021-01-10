@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbCost = new System.Windows.Forms.Label();
             this.lbBedsAmount = new System.Windows.Forms.Label();
             this.lbKind = new System.Windows.Forms.Label();
@@ -57,7 +58,13 @@
             this.txtBoxCustomerName = new System.Windows.Forms.TextBox();
             this.txtBoxCustomerID = new System.Windows.Forms.TextBox();
             this.txtBoxCustomerPhone = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // lbCost
@@ -175,7 +182,7 @@
             this.dtCheckIn.Name = "dtCheckIn";
             this.dtCheckIn.Size = new System.Drawing.Size(199, 30);
             this.dtCheckIn.TabIndex = 210;
-            this.dtCheckIn.Value = new System.DateTime(2021, 1, 8, 0, 0, 0, 0);
+            this.dtCheckIn.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -197,9 +204,9 @@
             this.label12.Location = new System.Drawing.Point(27, 106);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 23);
+            this.label12.Size = new System.Drawing.Size(93, 23);
             this.label12.TabIndex = 207;
-            this.label12.Text = "CheckIn:";
+            this.label12.Text = "Check In:";
             // 
             // label8
             // 
@@ -328,7 +335,7 @@
             this.dtCheckOut.Name = "dtCheckOut";
             this.dtCheckOut.Size = new System.Drawing.Size(199, 30);
             this.dtCheckOut.TabIndex = 221;
-            this.dtCheckOut.Value = new System.DateTime(2021, 1, 8, 0, 0, 0, 0);
+            this.dtCheckOut.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // label9
             // 
@@ -408,6 +415,18 @@
             this.txtBoxCustomerPhone.Size = new System.Drawing.Size(293, 31);
             this.txtBoxCustomerPhone.TabIndex = 227;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
             // CheckInWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -450,6 +469,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckInWindow";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,5 +508,8 @@
         private System.Windows.Forms.TextBox txtBoxCustomerName;
         private System.Windows.Forms.TextBox txtBoxCustomerID;
         private System.Windows.Forms.TextBox txtBoxCustomerPhone;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
     }
 }

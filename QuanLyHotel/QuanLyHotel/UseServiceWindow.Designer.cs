@@ -67,7 +67,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(77, 299);
+            this.label14.Location = new System.Drawing.Point(77, 421);
             this.label14.Margin = new System.Windows.Forms.Padding(4);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 23);
@@ -233,16 +233,17 @@
             this.dtDateService.Name = "dtDateService";
             this.dtDateService.Size = new System.Drawing.Size(207, 30);
             this.dtDateService.TabIndex = 236;
-            this.dtDateService.Value = new System.DateTime(2019, 10, 24, 0, 0, 0, 0);
+            this.dtDateService.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // txtNumberService
             // 
             this.txtNumberService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumberService.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumberService.Location = new System.Drawing.Point(169, 295);
+            this.txtNumberService.Location = new System.Drawing.Point(169, 417);
             this.txtNumberService.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumberService.MaxLength = 40;
             this.txtNumberService.Name = "txtNumberService";
+            this.txtNumberService.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtNumberService.Size = new System.Drawing.Size(207, 30);
             this.txtNumberService.TabIndex = 237;
             this.txtNumberService.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumberService_KeyPress);
@@ -297,31 +298,29 @@
             this.lbKindService.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbKindService.AutoSize = true;
             this.lbKindService.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.lbKindService.Location = new System.Drawing.Point(227, 374);
+            this.lbKindService.Location = new System.Drawing.Point(227, 323);
             this.lbKindService.Margin = new System.Windows.Forms.Padding(4);
             this.lbKindService.Name = "lbKindService";
-            this.lbKindService.Size = new System.Drawing.Size(59, 23);
+            this.lbKindService.Size = new System.Drawing.Size(0, 23);
             this.lbKindService.TabIndex = 244;
-            this.lbKindService.Text = "Name";
             // 
             // lbNameService
             // 
             this.lbNameService.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbNameService.AutoSize = true;
             this.lbNameService.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.lbNameService.Location = new System.Drawing.Point(227, 343);
+            this.lbNameService.Location = new System.Drawing.Point(227, 292);
             this.lbNameService.Margin = new System.Windows.Forms.Padding(4);
             this.lbNameService.Name = "lbNameService";
-            this.lbNameService.Size = new System.Drawing.Size(59, 23);
+            this.lbNameService.Size = new System.Drawing.Size(0, 23);
             this.lbNameService.TabIndex = 243;
-            this.lbNameService.Text = "Name";
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(77, 343);
+            this.label6.Location = new System.Drawing.Point(77, 292);
             this.label6.Margin = new System.Windows.Forms.Padding(4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 23);
@@ -333,7 +332,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(77, 374);
+            this.label9.Location = new System.Drawing.Point(77, 323);
             this.label9.Margin = new System.Windows.Forms.Padding(4);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 23);
@@ -345,19 +344,18 @@
             this.lbCost.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbCost.AutoSize = true;
             this.lbCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.lbCost.Location = new System.Drawing.Point(227, 405);
+            this.lbCost.Location = new System.Drawing.Point(227, 354);
             this.lbCost.Margin = new System.Windows.Forms.Padding(4);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(59, 23);
+            this.lbCost.Size = new System.Drawing.Size(0, 23);
             this.lbCost.TabIndex = 246;
-            this.lbCost.Text = "Name";
             // 
             // label15
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(77, 405);
+            this.label15.Location = new System.Drawing.Point(77, 354);
             this.label15.Margin = new System.Windows.Forms.Padding(4);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(56, 23);

@@ -60,7 +60,14 @@ namespace QuanLyHotel
                 {
                     case "Trống":
                         {
-                            btn.BackColor = Color.Aqua;
+                            if (item.Roomkind == "Vip")
+                            {
+                                btn.BackColor = Color.Yellow;
+                            }
+                            else
+                            {
+                                btn.BackColor = Color.Aqua;
+                            }
                             break;
                         }
                     case "Có Khách":
@@ -71,6 +78,7 @@ namespace QuanLyHotel
                     default:
                         break;
                 }
+                
 
                 flpRoom.Controls.Add(btn);
             }
@@ -198,7 +206,8 @@ namespace QuanLyHotel
 
         private void HomeWindow_Load(object sender, EventArgs e)
         {
-
+            this.loadData();
+            this.LoadRoom();
         }
         #endregion
     }

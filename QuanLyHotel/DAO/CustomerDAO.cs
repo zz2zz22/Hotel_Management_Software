@@ -238,7 +238,8 @@ namespace customerDAO
             string query = string.Empty;
             query += "SELECT [idc], [name], [phone], [date], [cmnd]";
             query += "FROM [customer]";
-            query += " WHERE ([namee] LIKE CONCAT('%',@Keyword,'%'))";
+            //Sửa [namee] ==> [name]
+            query += " WHERE ([name] LIKE CONCAT('%',@Keyword,'%'))";
             query += " OR ([idc] LIKE CONCAT('%',@Keyword,'%'))";
             query += " OR ([phone] LIKE CONCAT('%',@Keyword,'%'))";
             query += " OR ([date] LIKE CONCAT('%',@Keyword,'%'))";

@@ -231,7 +231,7 @@ namespace QuanLyHotel
                 rm.Idr = txtNameRoom.Text;
                 rm.Name = txtNameRoom.Text;
                 rm.Roomkind = txtKindRoom.Text;
-                rm.Status = "Empty";
+                rm.Status = "Trống";
                 rm.Bedamount = int.Parse(txtBedsAmount.Text);
                 rm.Cost = Decimal.Parse(txtCost.Text);
                 bool kq = rmBus.add(rm);
@@ -245,38 +245,90 @@ namespace QuanLyHotel
 
         private void btEditRoom_Click_1(object sender, EventArgs e)
         {
-            rmBus = new RoomBUS();
-            RoomDTO rm = new RoomDTO();
-            rm.Idr = txtNameRoom.Text;
-            rm.Name = txtNameRoom.Text;
-            rm.Roomkind = txtKindRoom.Text;
-            rm.Status = "Empty";
-            rm.Bedamount = int.Parse(txtBedsAmount.Text);
-            rm.Cost = Decimal.Parse(txtCost.Text);
-            bool kq = rmBus.edit(rm);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            //Thêm errorProvider vào Edit
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+
+            if (txtNameRoom.Text == "")
+            {
+                errorProvider1.SetError(txtNameRoom, "not null!");
+            }
+            else if (txtKindRoom.Text == "")
+            {
+                errorProvider2.SetError(txtKindRoom, "not null!");
+            }
+            else if (txtBedsAmount.Text == "")
+            {
+                errorProvider3.SetError(txtBedsAmount, "not null!");
+            }
+            else if (txtCost.Text == "")
+            {
+                errorProvider4.SetError(txtCost, "not null!");
+            }
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                rmBus = new RoomBUS();
+                RoomDTO rm = new RoomDTO();
+                rm.Idr = txtNameRoom.Text;
+                rm.Name = txtNameRoom.Text;
+                rm.Roomkind = txtKindRoom.Text;
+                rm.Status = "Trống";
+                rm.Bedamount = int.Parse(txtBedsAmount.Text);
+                rm.Cost = Decimal.Parse(txtCost.Text);
+                bool kq = rmBus.edit(rm);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
 
         private void btDeleteRoom_Click_1(object sender, EventArgs e)
         {
-            rmBus = new RoomBUS();
-            RoomDTO rm = new RoomDTO();
-            rm.Idr = txtNameRoom.Text;
-            rm.Name = txtNameRoom.Text;
-            rm.Roomkind = txtKindRoom.Text;
-            rm.Status = "Empty";
-            rm.Bedamount = int.Parse(txtBedsAmount.Text);
-            rm.Cost = Decimal.Parse(txtCost.Text);
-            bool kq = rmBus.delete(rm);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            //Thêm errorProvider vào delete
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+
+            if (txtNameRoom.Text == "")
+            {
+                errorProvider1.SetError(txtNameRoom, "not null!");
+            }
+            else if (txtKindRoom.Text == "")
+            {
+                errorProvider2.SetError(txtKindRoom, "not null!");
+            }
+            else if (txtBedsAmount.Text == "")
+            {
+                errorProvider3.SetError(txtBedsAmount, "not null!");
+            }
+            else if (txtCost.Text == "")
+            {
+                errorProvider4.SetError(txtCost, "not null!");
+            }
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                rmBus = new RoomBUS();
+                RoomDTO rm = new RoomDTO();
+                rm.Idr = txtNameRoom.Text;
+                rm.Name = txtNameRoom.Text;
+                rm.Roomkind = txtKindRoom.Text;
+                rm.Status = "Trống";
+                rm.Bedamount = int.Parse(txtBedsAmount.Text);
+                rm.Cost = Decimal.Parse(txtCost.Text);
+                bool kq = rmBus.delete(rm);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
         #endregion
 

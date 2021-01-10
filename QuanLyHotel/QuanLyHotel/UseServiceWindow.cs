@@ -5,6 +5,7 @@ using serviceDTO;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace QuanLyHotel
 {
@@ -136,7 +137,7 @@ namespace QuanLyHotel
 
         private void btLoadCustomer_Click(object sender, EventArgs e)
         {
-            if(txtSearchService.Text=="")
+            if (txtSearchService.Text == "")
             {
                 this.loadData();
             }
@@ -161,56 +162,72 @@ namespace QuanLyHotel
             int numrow;
             numrow = e.RowIndex;
             lbNameService.Text = dtgvService.Rows[numrow].Cells[0].Value.ToString();
-            lbKindRoom.Text = dtgvService.Rows[numrow].Cells[1].Value.ToString();
+            lbKindService.Text = dtgvService.Rows[numrow].Cells[1].Value.ToString();
             lbCost.Text = dtgvService.Rows[numrow].Cells[2].Value.ToString();
+
         }
 
         private void btUseService_Click(object sender, EventArgs e)
         {
-            errorProvider1.Clear();
-            //errorProvider2.Clear();
-
-            if (txtNumberService.Text == "")
+            if (lbNameRoom.Text == "")
             {
-                errorProvider1.SetError(txtNumberService, "not null!");
-            }
-            //else if (txtKindService.Text == "")
-            //{
-            //    errorProvider2.SetError(txtKindService, "not null!");
-            //}
+                if (lbKindRoom.Text == "")
+                {
+                    if (lbBedsAmount.Text == "")
+                    {
+                        MessageBox.Show("Please choose a room first !");
+                        this.Close();
+                    }
+                }
 
+            }
             else
             {
-                roomServiceBUS = new RoomServiceBUS();
-                RoomServiceDTO roomService = new RoomServiceDTO();
-                roomService.IDR_S = lbNameRoom.Text+"@"+lbNameService.Text;
-                roomService.IDR = lbNameRoom.Text;
-                roomService.IDS = lbNameService.Text;
-                roomService.TIME = DateTime.Parse(dtDateService.Text);
-                roomService.NUMBER = int.Parse(txtNumberService.Text);
-                roomService.COST = Decimal.Parse(lbCost.Text) * Decimal.Parse(txtNumberService.Text);
-                bool kq = roomServiceBUS.add(roomService);
-                if (kq == false)
-                    MessageBox.Show("Fail!");
+                errorProvider1.Clear();
+
+                if (txtNumberService.Text == "")
+                {
+                    errorProvider1.SetError(txtNumberService, "not null!");
+                }
+
                 else
-                    MessageBox.Show("Sussces");
-                this.loadData();
+                {
+                    roomServiceBUS = new RoomServiceBUS();
+                    RoomServiceDTO roomService = new RoomServiceDTO();
+                    //Sửa biến để kg trùng service
+                    roomService.IDR_S = lbNameRoom.Text + "@" + lbNameService.Text + "@" + DateTime.Now;
+                    roomService.IDR = lbNameRoom.Text;
+                    roomService.IDS = lbNameService.Text;
+                    roomService.TIME = DateTime.Parse(dtDateService.Text);
+                    roomService.NUMBER = int.Parse(txtNumberService.Text);
+                    roomService.COST = Decimal.Parse(lbCost.Text) * Decimal.Parse(txtNumberService.Text);
+                    bool kq = roomServiceBUS.add(roomService);
+                    if (kq == false)
+                        MessageBox.Show("Fail!");
+                    else
+                        MessageBox.Show("Sussces");
+                    this.loadData();
+                    
 
+                    string fileLPath = @"file.txt";
+                    string[] lines;
+                    string fileText = "";
+                    lines = System.IO.File.ReadAllLines(fileLPath);
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        fileText += lines[i] + "\n";
+                    }
+                    string str = fileText + lbNameService.Text + "\t" + "Service" + "\t" + dtDateService.Text + "\t" + lbCost.Text + "\t" + lbKindService.Text;
+
+                    System.IO.File.WriteAllText(fileLPath, str);
+
+
+                    //Chuyển this.Close vào để chạy errorProvider
+                    this.Close();
+                }
             }
-
-            string fileLPath = @"file.txt";
-            string[] lines;
-            string fileText = "";
-            lines = System.IO.File.ReadAllLines(fileLPath);
-            for (int i = 0; i < lines.Length; i++)
-            {
-                fileText += lines[i] + "\n";
-            }
-            string str = fileText + lbNameService.Text + "\t" + "Service" + "\t" + dtDateService.Text + "\t" + lbCost.Text + "\t" + lbKindService.Text;
-
-            System.IO.File.WriteAllText(fileLPath, str);
-            this.Close();
         }
+
         #endregion
         //
     }

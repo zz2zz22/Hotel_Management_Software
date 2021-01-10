@@ -58,7 +58,7 @@ namespace QuanLyHotel
             dtgvCustomer.AllowUserToAddRows = false;
             dtgvCustomer.DataSource = list;
 
-           
+
 
             DataGridViewTextBoxColumn NAME = new DataGridViewTextBoxColumn();
             NAME.Name = "idc";
@@ -143,51 +143,69 @@ namespace QuanLyHotel
         {
 
             TimeSpan a = dtCheckOut.Value.Subtract(dtCheckIn.Value);
-            decimal x = a.Days+1;
-            decimal y = Decimal.Parse(lbCost.Text) * x;
+
 
             if (isExsit == false)
             {
                 ctmBus = new CustomerBUS();
                 CustomerDTO ctm = new CustomerDTO();
-                ctm.IDC = txtBoxCustomerName.Text;
+                ctm.IDC = txtBoxCustomerName.Text + DateTime.Now;
                 ctm.NAME = txtBoxCustomerName.Text;
                 ctm.PHONE = txtBoxCustomerPhone.Text;
                 ctm.DATE = DateTime.Parse(dtCheckIn.Text);
                 ctm.CMND = txtBoxCustomerID.Text;
                 bool kq2 = ctmBus.add(ctm);
             }
-
-            bllBUS = new BillBUS();
-            BillDTO bll = new BillDTO();
-            bll.IDB = DateTime.Now.ToString("mm/dd/yyyy:mm:ss");
-            bll.IDC = txtBoxCustomerName.Text;
-            bll.IDR = lbNameRoom.Text;
-            bll.CheckIn =DateTime.Parse(dtCheckIn.Text);
-            bll.CheckOut =DateTime.Parse(dtCheckOut.Text);
-            bll.COST = Decimal.Parse(lbCost.Text) * x;
-            bool kq = bllBUS.add(bll);
-
             
 
 
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            //Thêm điều kiện khi chưa chọn Room
+            if (lbNameRoom.Text == "")
+            {
+                if (lbKind.Text == "")
+                {
+                    if (lbBedsAmount.Text == "")
+                    {
+                        if (lbCost.Text == "")
+                        {
+                            MessageBox.Show("Please choose a room first !");
+                            this.Close();
+                        }
+                    }
+                }
+
+            }
             else
             {
-                rmBUS = new RoomBUS();
-                RoomDTO rm = new RoomDTO();
-                rm.Idr = lbNameRoom.Text;
-                rm.Status = "Có Khách";
-                bool kq1 = rmBUS.editStatus(rm);
-                if(kq==false)
+                decimal x = a.Days + 1;
+                decimal y = Decimal.Parse(lbCost.Text) * x;
+                bllBUS = new BillBUS();
+                BillDTO bll = new BillDTO();
+                bll.IDB = DateTime.Now.ToString("mm/dd/yyyy:mm:ss");
+                bll.IDC = txtBoxCustomerName.Text;
+                bll.IDR = lbNameRoom.Text;
+                bll.CheckIn = DateTime.Parse(dtCheckIn.Text);
+                bll.CheckOut = DateTime.Parse(dtCheckOut.Text);
+                bll.COST = Decimal.Parse(lbCost.Text) * x;
+                bool kq = bllBUS.add(bll);
+
+                if (kq == false)
                     MessageBox.Show("Fail!");
                 else
-                    MessageBox.Show("Sussces");
+                {
+                    rmBUS = new RoomBUS();
+                    RoomDTO rm = new RoomDTO();
+                    rm.Idr = lbNameRoom.Text;
+                    rm.Status = "Có Khách";
+                    bool kq1 = rmBUS.editStatus(rm);
+                    if (kq == false)
+                        MessageBox.Show("Fail!");
+                    else
+                        MessageBox.Show("Sussces");
+                }
+                isExsit = false;
+                this.Close();
             }
-
-            isExsit = false;
-            this.Close();
         }
 
         private void dtgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)

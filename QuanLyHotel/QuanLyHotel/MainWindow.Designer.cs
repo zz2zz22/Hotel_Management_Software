@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.MenuBar = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btExpense = new System.Windows.Forms.Button();
             this.btMenu = new System.Windows.Forms.Button();
             this.btCustomer = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.roomWindow1 = new QuanLyHotel.RoomWindow();
             this.customerWindow1 = new QuanLyHotel.CustomerWindow();
             this.accountWindow1 = new QuanLyHotel.AccountWindow();
-            this.button1 = new System.Windows.Forms.Button();
             this.reportWindows1 = new QuanLyHotel.ReportWindows();
             this.MenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,26 @@
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Size = new System.Drawing.Size(200, 891);
             this.MenuBar.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::QuanLyHotel.Properties.Resources.serviceicon;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(7, 448);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(193, 53);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Report";
+            this.button1.UseCompatibleTextRendering = true;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btExpense
             // 
@@ -254,26 +274,6 @@
             this.accountWindow1.Name = "accountWindow1";
             this.accountWindow1.Size = new System.Drawing.Size(50, 50);
             this.accountWindow1.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::QuanLyHotel.Properties.Resources.serviceicon;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 448);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(193, 53);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Report";
-            this.button1.UseCompatibleTextRendering = true;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // reportWindows1
             // 

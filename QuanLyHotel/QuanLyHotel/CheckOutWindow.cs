@@ -88,6 +88,8 @@ namespace QuanLyHotel
             CheckOut.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvBill.Columns.Add(CheckOut);
 
+         
+
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
             myCurrencyManager.Refresh();
@@ -158,7 +160,7 @@ namespace QuanLyHotel
         private void btLoadCustomer_Click(object sender, EventArgs e)
         {
             if (txtSearchBill.Text == "")
-            {
+            { 
                 this.loadData();
             }
             else
@@ -183,6 +185,8 @@ namespace QuanLyHotel
             RoomServiceDTO srv = new RoomServiceDTO();
             srv.IDR = lbNameRoom.Text;
             
+
+            //Xem lại checkout nên Delete chứ kg add new hay edit cost hoặc status nếu đc
             bllBus = new BillBUS();
             BillDTO bll = new BillDTO();
             bll.IDC = lbNameCustomer.Text;

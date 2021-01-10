@@ -229,13 +229,15 @@
             this.txtKindService.DisplayMember = "kind";
             this.txtKindService.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtKindService.FormattingEnabled = true;
+            this.txtKindService.Items.AddRange(new object[] {
+            "Food",
+            "Laundry"});
             this.txtKindService.Location = new System.Drawing.Point(107, 139);
             this.txtKindService.Margin = new System.Windows.Forms.Padding(4);
             this.txtKindService.MaxLength = 40;
             this.txtKindService.Name = "txtKindService";
             this.txtKindService.Size = new System.Drawing.Size(155, 34);
             this.txtKindService.TabIndex = 218;
-            this.txtKindService.ValueMember = "kind";
             // 
             // txtNameService
             // 
@@ -305,7 +307,7 @@
             this.dtgvService.RowHeadersWidth = 51;
             this.dtgvService.Size = new System.Drawing.Size(687, 224);
             this.dtgvService.TabIndex = 211;
-            this.dtgvService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvService_CellContentClick);
+            this.dtgvService.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvService_CellClick_1);
             // 
             // label15
             // 

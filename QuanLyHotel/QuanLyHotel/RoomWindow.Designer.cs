@@ -63,8 +63,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(17, 354);
@@ -152,7 +151,7 @@
             this.txtNameRoom.MaximumSize = new System.Drawing.Size(599, 29);
             this.txtNameRoom.MaxLength = 40;
             this.txtNameRoom.Name = "txtNameRoom";
-            this.txtNameRoom.Size = new System.Drawing.Size(599, 29);
+            this.txtNameRoom.Size = new System.Drawing.Size(599, 35);
             this.txtNameRoom.TabIndex = 186;
             // 
             // txtKindRoom
@@ -178,7 +177,7 @@
             this.txtBedsAmount.MaximumSize = new System.Drawing.Size(599, 29);
             this.txtBedsAmount.MaxLength = 40;
             this.txtBedsAmount.Name = "txtBedsAmount";
-            this.txtBedsAmount.Size = new System.Drawing.Size(599, 29);
+            this.txtBedsAmount.Size = new System.Drawing.Size(599, 35);
             this.txtBedsAmount.TabIndex = 188;
             this.txtBedsAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBedsAmount_KeyPress);
             // 
@@ -190,7 +189,7 @@
             this.txtCost.MaximumSize = new System.Drawing.Size(599, 29);
             this.txtCost.MaxLength = 40;
             this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(599, 29);
+            this.txtCost.Size = new System.Drawing.Size(599, 35);
             this.txtCost.TabIndex = 189;
             this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCost_KeyPress);
             // 
@@ -241,8 +240,7 @@
             // 
             // txtSearchRoom
             // 
-            this.txtSearchRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchRoom.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSearchRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRoom.Location = new System.Drawing.Point(115, 349);
             this.txtSearchRoom.Margin = new System.Windows.Forms.Padding(4);
@@ -294,6 +292,7 @@
             // 
             // btLoadRoom1
             // 
+            this.btLoadRoom1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btLoadRoom1.BackColor = System.Drawing.Color.Firebrick;
             this.btLoadRoom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLoadRoom1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

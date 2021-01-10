@@ -58,8 +58,7 @@
             // 
             // txtSearchExpense
             // 
-            this.txtSearchExpense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSearchExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchExpense.Location = new System.Drawing.Point(120, 284);
             this.txtSearchExpense.Margin = new System.Windows.Forms.Padding(4);
@@ -70,7 +69,7 @@
             // 
             // btLoadExpense
             // 
-            this.btLoadExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLoadExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btLoadExpense.BackColor = System.Drawing.Color.Firebrick;
             this.btLoadExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLoadExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,7 +219,7 @@
             // 
             // label15
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(23, 289);
@@ -240,7 +239,7 @@
             this.dtDateExpense.Name = "dtDateExpense";
             this.dtDateExpense.Size = new System.Drawing.Size(284, 35);
             this.dtDateExpense.TabIndex = 212;
-            this.dtDateExpense.Value = new System.DateTime(2019, 10, 24, 0, 0, 0, 0);
+            this.dtDateExpense.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // label12
             // 
@@ -279,7 +278,7 @@
             this.txtCostExpense.MaximumSize = new System.Drawing.Size(599, 29);
             this.txtCostExpense.MaxLength = 40;
             this.txtCostExpense.Name = "txtCostExpense";
-            this.txtCostExpense.Size = new System.Drawing.Size(599, 29);
+            this.txtCostExpense.Size = new System.Drawing.Size(599, 34);
             this.txtCostExpense.TabIndex = 213;
             // 
             // ExpenseWindow

@@ -14,7 +14,7 @@ namespace QuanLyHotel
 {
     public partial class CustomerWindow : UserControl
     {
-     
+
         public CustomerWindow()
         {
             InitializeComponent();
@@ -78,7 +78,7 @@ namespace QuanLyHotel
             pHONE.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvCustomer.Columns.Add(pHONE);
 
-            
+
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvCustomer.DataSource];
             myCurrencyManager.Refresh();
@@ -163,7 +163,7 @@ namespace QuanLyHotel
 
         private void TxtPhoneCustomer_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
             int keydown = e.KeyChar;
             if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
             {
@@ -243,36 +243,82 @@ namespace QuanLyHotel
 
         private void btEditCustomer_Click_1(object sender, EventArgs e)
         {
-            ctmBUS = new CustomerBUS();
-            CustomerDTO ctm = new CustomerDTO();
-            ctm.IDC = txtNameCustomer.Text;
-            ctm.NAME = txtNameCustomer.Text;
-            ctm.PHONE = txtPhoneCustomer.Text;
-            ctm.DATE = DateTime.Parse(dtBirthday.Text);
-            ctm.CMND = txtIdentifyCardCustomer.Text;
-            bool kq = ctmBUS.edit(ctm);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            //Thêm errorProvider vào edit
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+
+
+            if (txtNameCustomer.Text == "")
+            {
+                errorProvider1.SetError(txtNameCustomer, "not null!");
+            }
+            else if (txtIdentifyCardCustomer.Text == "")
+            {
+                errorProvider2.SetError(txtIdentifyCardCustomer, "not null!");
+            }
+            else if (txtPhoneCustomer.Text == "")
+            {
+                errorProvider3.SetError(txtPhoneCustomer, "not null!");
+            }
+
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                ctmBUS = new CustomerBUS();
+                CustomerDTO ctm = new CustomerDTO();
+                ctm.IDC = txtNameCustomer.Text;
+                ctm.NAME = txtNameCustomer.Text;
+                ctm.PHONE = txtPhoneCustomer.Text;
+                ctm.DATE = DateTime.Parse(dtBirthday.Text);
+                ctm.CMND = txtIdentifyCardCustomer.Text;
+                bool kq = ctmBUS.edit(ctm);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
 
         private void btDeleteCustomer_Click_1(object sender, EventArgs e)
         {
-            ctmBUS = new CustomerBUS();
-            CustomerDTO ctm = new CustomerDTO();
-            ctm.IDC = txtNameCustomer.Text;
-            ctm.NAME = txtNameCustomer.Text;
-            ctm.PHONE = txtPhoneCustomer.Text;
-            ctm.DATE = DateTime.Parse(dtBirthday.Text);
-            ctm.CMND = txtIdentifyCardCustomer.Text;
-            bool kq = ctmBUS.delete(ctm);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            //Thêm errorProvider vào delete
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+
+
+            if (txtNameCustomer.Text == "")
+            {
+                errorProvider1.SetError(txtNameCustomer, "not null!");
+            }
+            else if (txtIdentifyCardCustomer.Text == "")
+            {
+                errorProvider2.SetError(txtIdentifyCardCustomer, "not null!");
+            }
+            else if (txtPhoneCustomer.Text == "")
+            {
+                errorProvider3.SetError(txtPhoneCustomer, "not null!");
+            }
+
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                ctmBUS = new CustomerBUS();
+                CustomerDTO ctm = new CustomerDTO();
+                ctm.IDC = txtNameCustomer.Text;
+                ctm.NAME = txtNameCustomer.Text;
+                ctm.PHONE = txtPhoneCustomer.Text;
+                ctm.DATE = DateTime.Parse(dtBirthday.Text);
+                ctm.CMND = txtIdentifyCardCustomer.Text;
+                bool kq = ctmBUS.delete(ctm);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
         #endregion
     }

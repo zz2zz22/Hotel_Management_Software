@@ -126,7 +126,7 @@
             this.dtBirthday.Name = "dtBirthday";
             this.dtBirthday.Size = new System.Drawing.Size(599, 29);
             this.dtBirthday.TabIndex = 87;
-            this.dtBirthday.Value = new System.DateTime(2019, 10, 24, 0, 0, 0, 0);
+            this.dtBirthday.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // label7
             // 

@@ -423,36 +423,82 @@ namespace QuanLyHotel
 
         private void btEditService_Click(object sender, EventArgs e)
         {
-            srvBUS = new ServiceBUS();
+            //Thêm errorProvider vào Edit
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
 
-            ServiceDTO srv = new ServiceDTO();
-            srv.IDS = txtNameService.Text;
-            srv.NAME = txtNameService.Text;
-            srv.KIND = txtKindService.Text;
-            srv.COST = Decimal.Parse(txtCostService.Text);
-            bool kq = srvBUS.edit(srv);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+
+            if (txtNameService.Text == "")
+            {
+                errorProvider1.SetError(txtNameService, "not null!");
+            }
+            else if (txtKindService.Text == "")
+            {
+                errorProvider2.SetError(txtKindService, "not null!");
+            }
+            else if (txtCostService.Text == "")
+            {
+                errorProvider3.SetError(txtCostService, "not null!");
+            }
+
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                srvBUS = new ServiceBUS();
+
+                ServiceDTO srv = new ServiceDTO();
+                srv.IDS = txtNameService.Text;
+                srv.NAME = txtNameService.Text;
+                srv.KIND = txtKindService.Text;
+                srv.COST = Decimal.Parse(txtCostService.Text);
+                bool kq = srvBUS.edit(srv);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
 
         private void btDeleteService_Click(object sender, EventArgs e)
         {
-            srvBUS = new ServiceBUS();
+            //Thêm errorProvider vào delete
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
 
-            ServiceDTO srv = new ServiceDTO();
-            srv.IDS = txtNameService.Text;
-            srv.NAME = txtNameService.Text;
-            srv.KIND = txtKindService.Text;
-            srv.COST = Decimal.Parse(txtCostService.Text);
-            bool kq = srvBUS.delete(srv);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+
+            if (txtNameService.Text == "")
+            {
+                errorProvider1.SetError(txtNameService, "not null!");
+            }
+            else if (txtKindService.Text == "")
+            {
+                errorProvider2.SetError(txtKindService, "not null!");
+            }
+            else if (txtCostService.Text == "")
+            {
+                errorProvider3.SetError(txtCostService, "not null!");
+            }
+
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                srvBUS = new ServiceBUS();
+
+                ServiceDTO srv = new ServiceDTO();
+                srv.IDS = txtNameService.Text;
+                srv.NAME = txtNameService.Text;
+                srv.KIND = txtKindService.Text;
+                srv.COST = Decimal.Parse(txtCostService.Text);
+                bool kq = srvBUS.delete(srv);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
 
         private void btLoadService_Click(object sender, EventArgs e)
@@ -502,13 +548,15 @@ namespace QuanLyHotel
             txtKindService.DataSource = listKind;
         }
 
-        private void dtgvService_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        //Sửa CellContentClick thành CellClick do kg ăn các giá trị current Cell
+        private void dtgvService_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int t = dtgvService.CurrentCell.RowIndex;
-            txtNameService.Text = dtgvService.Rows[t].Cells[0].Value.ToString();
-            txtKindService.Text = dtgvService.Rows[t].Cells[1].Value.ToString();
-            txtCostService.Text = dtgvService.Rows[t].Cells[2].Value.ToString();
-            
+            int numrow;
+            numrow = e.RowIndex;
+            txtNameService.Text = dtgvService.Rows[numrow].Cells[0].Value.ToString();
+            txtKindService.Text = dtgvService.Rows[numrow].Cells[1].Value.ToString();
+            txtCostService.Text = dtgvService.Rows[numrow].Cells[2].Value.ToString();
         }
     }
 }

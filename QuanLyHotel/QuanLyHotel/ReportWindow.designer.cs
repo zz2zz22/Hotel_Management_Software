@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSearchService1 = new System.Windows.Forms.TextBox();
             this.btLoadService = new System.Windows.Forms.Button();
-            this.btDeleteService = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.dtgvService = new System.Windows.Forms.DataGridView();
             this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,39 +36,26 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtExpense = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtServiceCost = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSumCost = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtRoomCost = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtSumCost = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtServiceCost = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtExpense = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvService)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtSearchService1
-            // 
-            this.txtSearchService1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtSearchService1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchService1.Location = new System.Drawing.Point(123, 116);
-            this.txtSearchService1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearchService1.MaxLength = 40;
-            this.txtSearchService1.Name = "txtSearchService1";
-            this.txtSearchService1.Size = new System.Drawing.Size(656, 35);
-            this.txtSearchService1.TabIndex = 226;
-            // 
             // btLoadService
             // 
-            this.btLoadService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btLoadService.BackColor = System.Drawing.Color.Firebrick;
             this.btLoadService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLoadService.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLoadService.ForeColor = System.Drawing.Color.White;
-            this.btLoadService.Location = new System.Drawing.Point(137, 71);
+            this.btLoadService.Location = new System.Drawing.Point(31, 70);
             this.btLoadService.Margin = new System.Windows.Forms.Padding(4);
             this.btLoadService.Name = "btLoadService";
             this.btLoadService.Size = new System.Drawing.Size(99, 38);
@@ -79,24 +64,8 @@
             this.btLoadService.UseVisualStyleBackColor = false;
             this.btLoadService.Click += new System.EventHandler(this.btLoadService_Click);
             // 
-            // btDeleteService
-            // 
-            this.btDeleteService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btDeleteService.BackColor = System.Drawing.Color.Firebrick;
-            this.btDeleteService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDeleteService.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDeleteService.ForeColor = System.Drawing.Color.White;
-            this.btDeleteService.Location = new System.Drawing.Point(31, 71);
-            this.btDeleteService.Margin = new System.Windows.Forms.Padding(4);
-            this.btDeleteService.Name = "btDeleteService";
-            this.btDeleteService.Size = new System.Drawing.Size(99, 38);
-            this.btDeleteService.TabIndex = 224;
-            this.btDeleteService.Text = "Add";
-            this.btDeleteService.UseVisualStyleBackColor = false;
-            // 
             // label16
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.Black;
@@ -109,7 +78,6 @@
             // 
             // dtgvService
             // 
-            this.dtgvService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dtgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvService.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -118,12 +86,12 @@
             this.Date,
             this.Cost,
             this.Note});
-            this.dtgvService.Location = new System.Drawing.Point(31, 159);
+            this.dtgvService.Location = new System.Drawing.Point(31, 134);
             this.dtgvService.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvService.Name = "dtgvService";
             this.dtgvService.ReadOnly = true;
             this.dtgvService.RowHeadersWidth = 51;
-            this.dtgvService.Size = new System.Drawing.Size(755, 331);
+            this.dtgvService.Size = new System.Drawing.Size(954, 544);
             this.dtgvService.TabIndex = 213;
             // 
             // Names
@@ -161,18 +129,6 @@
             this.Note.Name = "Note";
             this.Note.ReadOnly = true;
             // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(25, 121);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(83, 26);
-            this.label15.TabIndex = 216;
-            this.label15.Text = "Search";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtRoomCost);
@@ -183,63 +139,12 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtExpense);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(856, 116);
+            this.groupBox1.Location = new System.Drawing.Point(995, 134);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(288, 374);
             this.groupBox1.TabIndex = 227;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // txtExpense
-            // 
-            this.txtExpense.Location = new System.Drawing.Point(120, 43);
-            this.txtExpense.Name = "txtExpense";
-            this.txtExpense.ReadOnly = true;
-            this.txtExpense.Size = new System.Drawing.Size(138, 22);
-            this.txtExpense.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Expense";
-            // 
-            // txtServiceCost
-            // 
-            this.txtServiceCost.Location = new System.Drawing.Point(120, 107);
-            this.txtServiceCost.Name = "txtServiceCost";
-            this.txtServiceCost.ReadOnly = true;
-            this.txtServiceCost.Size = new System.Drawing.Size(138, 22);
-            this.txtServiceCost.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Service";
-            // 
-            // txtSumCost
-            // 
-            this.txtSumCost.Location = new System.Drawing.Point(120, 271);
-            this.txtSumCost.Name = "txtSumCost";
-            this.txtSumCost.ReadOnly = true;
-            this.txtSumCost.Size = new System.Drawing.Size(138, 22);
-            this.txtSumCost.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 274);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Total";
+            this.groupBox1.Text = "Total income";
             // 
             // txtRoomCost
             // 
@@ -258,20 +163,69 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Room";
             // 
+            // txtSumCost
+            // 
+            this.txtSumCost.Location = new System.Drawing.Point(120, 271);
+            this.txtSumCost.Name = "txtSumCost";
+            this.txtSumCost.ReadOnly = true;
+            this.txtSumCost.Size = new System.Drawing.Size(138, 22);
+            this.txtSumCost.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 274);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Total";
+            // 
+            // txtServiceCost
+            // 
+            this.txtServiceCost.Location = new System.Drawing.Point(120, 107);
+            this.txtServiceCost.Name = "txtServiceCost";
+            this.txtServiceCost.ReadOnly = true;
+            this.txtServiceCost.Size = new System.Drawing.Size(138, 22);
+            this.txtServiceCost.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Service";
+            // 
+            // txtExpense
+            // 
+            this.txtExpense.Location = new System.Drawing.Point(120, 43);
+            this.txtExpense.Name = "txtExpense";
+            this.txtExpense.ReadOnly = true;
+            this.txtExpense.Size = new System.Drawing.Size(138, 22);
+            this.txtExpense.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Expense";
+            // 
             // ReportWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtSearchService1);
             this.Controls.Add(this.btLoadService);
-            this.Controls.Add(this.btDeleteService);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.dtgvService);
-            this.Controls.Add(this.label15);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportWindows";
             this.Size = new System.Drawing.Size(1283, 682);
+            this.Load += new System.EventHandler(this.ReportWindows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvService)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -281,12 +235,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtSearchService1;
         private System.Windows.Forms.Button btLoadService;
-        private System.Windows.Forms.Button btDeleteService;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dtgvService;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Names;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kind;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;

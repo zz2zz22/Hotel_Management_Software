@@ -198,6 +198,7 @@ namespace billDAO
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
 
+
                     try
                     {
                         con.Open();

@@ -215,38 +215,84 @@ namespace QuanLyHotel
 
         private void BtEditExpense_Click(object sender, EventArgs e)
         {
-            expenseBUS = new ExpenseBUS();
+            //Thêm errorProvider vào edit
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
 
-            ExpenseDTO srv = new ExpenseDTO();
-            srv.IDE = txtNameExpense.Text;
-            srv.NAME = txtNameExpense.Text;
-            srv.KIND = txtKindExpense.Text;
-            srv.DATE = DateTime.Parse(dtDateExpense.Text);
-            srv.COST = Decimal.Parse(txtCostExpense.Text);
-            bool kq = expenseBUS.edit(srv);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+
+            if (txtNameExpense.Text == "")
+            {
+                errorProvider1.SetError(txtNameExpense, "not null!");
+            }
+            else if (txtKindExpense.Text == "")
+            {
+                errorProvider2.SetError(txtKindExpense, "not null!");
+            }
+            else if (txtCostExpense.Text == "")
+            {
+                errorProvider3.SetError(txtCostExpense, "not null!");
+            }
+
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                expenseBUS = new ExpenseBUS();
+
+                ExpenseDTO srv = new ExpenseDTO();
+                srv.IDE = txtNameExpense.Text;
+                srv.NAME = txtNameExpense.Text;
+                srv.KIND = txtKindExpense.Text;
+                srv.DATE = DateTime.Parse(dtDateExpense.Text);
+                srv.COST = Decimal.Parse(txtCostExpense.Text);
+                bool kq = expenseBUS.edit(srv);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
 
         private void BtDeleteExpense_Click(object sender, EventArgs e)
         {
-            expenseBUS = new ExpenseBUS();
+            //Thêm errorProvider vào delete
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
 
-            ExpenseDTO srv = new ExpenseDTO();
-            srv.IDE = txtNameExpense.Text;
-            srv.NAME = txtNameExpense.Text;
-            srv.KIND = txtKindExpense.Text;
-            srv.DATE = DateTime.Parse(dtDateExpense.Text);
-            srv.COST = Decimal.Parse(txtCostExpense.Text);
-            bool kq = expenseBUS.delete(srv);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+
+            if (txtNameExpense.Text == "")
+            {
+                errorProvider1.SetError(txtNameExpense, "not null!");
+            }
+            else if (txtKindExpense.Text == "")
+            {
+                errorProvider2.SetError(txtKindExpense, "not null!");
+            }
+            else if (txtCostExpense.Text == "")
+            {
+                errorProvider3.SetError(txtCostExpense, "not null!");
+            }
+
+
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                expenseBUS = new ExpenseBUS();
+
+                ExpenseDTO srv = new ExpenseDTO();
+                srv.IDE = txtNameExpense.Text;
+                srv.NAME = txtNameExpense.Text;
+                srv.KIND = txtKindExpense.Text;
+                srv.DATE = DateTime.Parse(dtDateExpense.Text);
+                srv.COST = Decimal.Parse(txtCostExpense.Text);
+                bool kq = expenseBUS.delete(srv);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
         }
         #endregion
 
