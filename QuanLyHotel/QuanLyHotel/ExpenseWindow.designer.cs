@@ -216,6 +216,7 @@
             this.dtgvExpense.RowHeadersWidth = 51;
             this.dtgvExpense.Size = new System.Drawing.Size(720, 331);
             this.dtgvExpense.TabIndex = 191;
+            this.dtgvExpense.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvExpense_CellClick);
             // 
             // label15
             // 

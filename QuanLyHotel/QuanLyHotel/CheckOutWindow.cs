@@ -26,6 +26,7 @@ namespace QuanLyHotel
         private RoomBUS rmBUS;
         private RoomServiceBUS srvBUS;
         string username = "";
+       
         public CheckOutWindow(string Username)
         {
             username = Username;
@@ -88,11 +89,15 @@ namespace QuanLyHotel
             CheckOut.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvBill.Columns.Add(CheckOut);
 
-         
 
 
+
+            //CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
+            
             myCurrencyManager.Refresh();
+            
+            
 
 
         }
@@ -147,10 +152,11 @@ namespace QuanLyHotel
             dtgvBill.Columns.Add(CheckOut);
 
 
+            //CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
             myCurrencyManager.Refresh();
-
-
+            
+            
         }
         #endregion
         //
@@ -159,6 +165,7 @@ namespace QuanLyHotel
         #region Events
         private void btLoadCustomer_Click(object sender, EventArgs e)
         {
+            
             if (txtSearchBill.Text == "")
             { 
                 this.loadData();
@@ -177,6 +184,20 @@ namespace QuanLyHotel
                     this.loadData(listTimKiem);
                 }
             }
+            foreach (DataGridViewRow row in dtgvBill.Rows)
+            {
+                CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
+                myCurrencyManager.SuspendBinding();
+                
+                if ((row.Cells[1].Value.ToString()) == "a")
+                {
+                    row.Visible = false;
+                    lbCheckOut.Text += "5";
+                }
+                myCurrencyManager.ResumeBinding();
+                myCurrencyManager.Refresh();
+            }
+            dtgvBill.Refresh();
         }
 
         private void btCheckOut_Click_1(object sender, EventArgs e)
@@ -229,11 +250,15 @@ namespace QuanLyHotel
         {
             int numrow;
             numrow = e.RowIndex;
-            lbNameRoom.Text = dtgvBill.Rows[numrow].Cells[0].Value.ToString();
-            lbNameCustomer.Text = dtgvBill.Rows[numrow].Cells[1].Value.ToString();
-            lbSumCost.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[2].Value);
-            lbCheckIn.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[3].Value);
-            lbCheckOut.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[4].Value);
+            if(numrow > -1)
+            {
+                lbNameRoom.Text = dtgvBill.Rows[numrow].Cells[0].Value.ToString();
+                lbNameCustomer.Text = dtgvBill.Rows[numrow].Cells[1].Value.ToString();
+                lbSumCost.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[2].Value);
+                lbCheckIn.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[3].Value);
+                lbCheckOut.Text = Convert.ToString(dtgvBill.Rows[numrow].Cells[4].Value);
+            }    
+            
         }
         #endregion
     }

@@ -294,8 +294,20 @@ namespace QuanLyHotel
                 this.loadData();
             }
         }
+
         #endregion
 
-
+        private void dtgvExpense_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            if (numrow > -1)
+            {
+                txtNameExpense.Text = dtgvExpense.Rows[numrow].Cells[0].Value.ToString();
+                txtKindExpense.Text = dtgvExpense.Rows[numrow].Cells[1].Value.ToString();
+                txtCostExpense.Text = Convert.ToString(dtgvExpense.Rows[numrow].Cells[3].Value);
+                dtDateExpense.Text = Convert.ToString(dtgvExpense.Rows[numrow].Cells[2].Value);
+            }    
+        }
     }
 }
