@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btLoadAccount = new System.Windows.Forms.Button();
             this.txtSearchAccount = new System.Windows.Forms.TextBox();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
@@ -36,20 +37,34 @@
             this.btEditAccount = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbGender = new System.Windows.Forms.Label();
-            this.lbPhone = new System.Windows.Forms.Label();
-            this.lbCmnd = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbUsername = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lbPassword = new System.Windows.Forms.Label();
+            this.lbUsername = new System.Windows.Forms.TextBox();
+            this.lbPassword = new System.Windows.Forms.TextBox();
+            this.lbName = new System.Windows.Forms.TextBox();
+            this.lbPhone = new System.Windows.Forms.TextBox();
+            this.lbEmail = new System.Windows.Forms.TextBox();
+            this.lbCmnd = new System.Windows.Forms.TextBox();
+            this.lbGender = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbLevel = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
             this.SuspendLayout();
             // 
             // btLoadAccount
@@ -154,28 +169,18 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label.Location = new System.Drawing.Point(17, 247);
+            this.label.Location = new System.Drawing.Point(19, 256);
             this.label.Margin = new System.Windows.Forms.Padding(4);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(79, 26);
             this.label.TabIndex = 212;
             this.label.Text = "Name:";
             // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbName.Location = new System.Drawing.Point(203, 247);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(0, 26);
-            this.lbName.TabIndex = 213;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(19, 280);
+            this.label18.Location = new System.Drawing.Point(19, 296);
             this.label18.Margin = new System.Windows.Forms.Padding(4);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(97, 26);
@@ -186,7 +191,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(17, 384);
+            this.label15.Location = new System.Drawing.Point(19, 416);
             this.label15.Margin = new System.Windows.Forms.Padding(4);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(153, 26);
@@ -197,7 +202,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(17, 316);
+            this.label1.Location = new System.Drawing.Point(19, 336);
             this.label1.Margin = new System.Windows.Forms.Padding(4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 26);
@@ -208,52 +213,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(17, 349);
+            this.label2.Location = new System.Drawing.Point(19, 376);
             this.label2.Margin = new System.Windows.Forms.Padding(4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 26);
             this.label2.TabIndex = 207;
             this.label2.Text = "Email:";
-            // 
-            // lbGender
-            // 
-            this.lbGender.AutoSize = true;
-            this.lbGender.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbGender.Location = new System.Drawing.Point(204, 280);
-            this.lbGender.Margin = new System.Windows.Forms.Padding(4);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(0, 26);
-            this.lbGender.TabIndex = 208;
-            // 
-            // lbPhone
-            // 
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbPhone.Location = new System.Drawing.Point(203, 316);
-            this.lbPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(0, 26);
-            this.lbPhone.TabIndex = 209;
-            // 
-            // lbCmnd
-            // 
-            this.lbCmnd.AutoSize = true;
-            this.lbCmnd.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbCmnd.Location = new System.Drawing.Point(203, 384);
-            this.lbCmnd.Margin = new System.Windows.Forms.Padding(4);
-            this.lbCmnd.Name = "lbCmnd";
-            this.lbCmnd.Size = new System.Drawing.Size(0, 26);
-            this.lbCmnd.TabIndex = 211;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbEmail.Location = new System.Drawing.Point(204, 349);
-            this.lbEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(0, 26);
-            this.lbEmail.TabIndex = 210;
             // 
             // label4
             // 
@@ -266,55 +231,142 @@
             this.label4.TabIndex = 216;
             this.label4.Text = "Username:";
             // 
-            // lbUsername
-            // 
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbUsername.Location = new System.Drawing.Point(203, 176);
-            this.lbUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(0, 26);
-            this.lbUsername.TabIndex = 217;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(19, 211);
+            this.label7.Location = new System.Drawing.Point(19, 216);
             this.label7.Margin = new System.Windows.Forms.Padding(4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 26);
             this.label7.TabIndex = 214;
             this.label7.Text = "Password:";
             // 
+            // lbUsername
+            // 
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.Location = new System.Drawing.Point(185, 177);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.ReadOnly = true;
+            this.lbUsername.Size = new System.Drawing.Size(322, 30);
+            this.lbUsername.TabIndex = 218;
+            // 
             // lbPassword
             // 
-            this.lbPassword.AutoSize = true;
-            this.lbPassword.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbPassword.Location = new System.Drawing.Point(204, 211);
-            this.lbPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPassword.Location = new System.Drawing.Point(185, 213);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(0, 26);
-            this.lbPassword.TabIndex = 215;
+            this.lbPassword.Size = new System.Drawing.Size(322, 30);
+            this.lbPassword.TabIndex = 219;
+            // 
+            // lbName
+            // 
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(185, 253);
+            this.lbName.Name = "lbName";
+            this.lbName.ReadOnly = true;
+            this.lbName.Size = new System.Drawing.Size(322, 30);
+            this.lbName.TabIndex = 220;
+            // 
+            // lbPhone
+            // 
+            this.lbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhone.Location = new System.Drawing.Point(185, 332);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(322, 30);
+            this.lbPhone.TabIndex = 222;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Location = new System.Drawing.Point(185, 373);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(322, 30);
+            this.lbEmail.TabIndex = 223;
+            // 
+            // lbCmnd
+            // 
+            this.lbCmnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCmnd.Location = new System.Drawing.Point(185, 413);
+            this.lbCmnd.Name = "lbCmnd";
+            this.lbCmnd.Size = new System.Drawing.Size(322, 30);
+            this.lbCmnd.TabIndex = 224;
+            // 
+            // lbGender
+            // 
+            this.lbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGender.FormattingEnabled = true;
+            this.lbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.lbGender.Location = new System.Drawing.Point(185, 293);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(322, 33);
+            this.lbGender.TabIndex = 225;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(19, 456);
+            this.label6.Margin = new System.Windows.Forms.Padding(4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 26);
+            this.label6.TabIndex = 226;
+            this.label6.Text = "Level:";
+            // 
+            // lbLevel
+            // 
+            this.lbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLevel.Location = new System.Drawing.Point(185, 453);
+            this.lbLevel.Name = "lbLevel";
+            this.lbLevel.Size = new System.Drawing.Size(322, 30);
+            this.lbLevel.TabIndex = 227;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
             // 
             // AccountWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbUsername);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.label);
+            this.Controls.Add(this.lbLevel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbGender);
+            this.Controls.Add(this.lbCmnd);
+            this.Controls.Add(this.lbEmail);
+            this.Controls.Add(this.lbPhone);
             this.Controls.Add(this.lbName);
+            this.Controls.Add(this.lbPassword);
+            this.Controls.Add(this.lbUsername);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbGender);
-            this.Controls.Add(this.lbPhone);
-            this.Controls.Add(this.lbCmnd);
-            this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.btDeleteAcount);
             this.Controls.Add(this.btEditAccount);
             this.Controls.Add(this.label3);
@@ -326,6 +378,12 @@
             this.Name = "AccountWindow";
             this.Size = new System.Drawing.Size(1283, 999);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,18 +399,26 @@
         private System.Windows.Forms.Button btEditAccount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbGender;
-        private System.Windows.Forms.Label lbPhone;
-        private System.Windows.Forms.Label lbCmnd;
-        private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbPassword;
+        private System.Windows.Forms.TextBox lbUsername;
+        private System.Windows.Forms.TextBox lbPassword;
+        private System.Windows.Forms.TextBox lbName;
+        private System.Windows.Forms.TextBox lbPhone;
+        private System.Windows.Forms.TextBox lbEmail;
+        private System.Windows.Forms.TextBox lbCmnd;
+        private System.Windows.Forms.ComboBox lbGender;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox lbLevel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
     }
 }

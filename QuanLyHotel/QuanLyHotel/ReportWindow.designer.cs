@@ -222,6 +222,7 @@
             this.Controls.Add(this.btLoadService);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.dtgvService);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportWindows";
             this.Size = new System.Drawing.Size(1283, 682);
