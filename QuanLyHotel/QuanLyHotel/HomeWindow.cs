@@ -41,6 +41,7 @@ namespace QuanLyHotel
                 MessageBox.Show("Có lỗi khi lấy thông tin từ DB");
                 return;
             }
+            
             foreach (RoomDTO item in listRoom)
             {
                 Button btn = new Button() { Width = RoomDAO.RoomWidth, Height = RoomDAO.RoomHeigh };

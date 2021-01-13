@@ -11,6 +11,7 @@ using userBUS;
 using userDTO;
 using managerBUS;
 using managerDTO;
+using System.Security.Cryptography;
 
 namespace QuanLyHotel
 {
@@ -18,7 +19,7 @@ namespace QuanLyHotel
     {
         private bool dragging = false;
         private Point StartPoint = new Point(0, 0);
-
+        MD5 mD5 = MD5.Create();
         public SighUpWindow()
         {
             InitializeComponent();
@@ -54,7 +55,13 @@ namespace QuanLyHotel
             LoginWindow C = new LoginWindow();
             C.ShowDialog();
         }
-
+        public static string MD5Hash(string input)
+        {
+            using (var md5 = new MD5CryptoServiceProvider())
+                return string.Concat("0x",
+                    BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(input)))
+                    .Replace("-", string.Empty).PadRight(62, '0'));
+        }
         private void SignInButton_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -114,7 +121,15 @@ namespace QuanLyHotel
             {
                 Us.Idm = txtUsername.Text;
                 Us.Name = txtName.Text;
-                Us.Password = txtPassword.Text;
+                byte[] b = Encoding.ASCII.GetBytes(txtPassword.Text);
+                byte[] hash = mD5.ComputeHash(b);
+                StringBuilder sb = new StringBuilder();
+                foreach(var a in hash)
+                {
+                    sb.Append(a.ToString("X2"));
+                    Us.Password = sb.ToString();
+                }
+                //Us.Password = txtPassword.Text;
                 Us.Phone = txtPhone.Text;
                 Us.Email = txtEmail.Text;
                 Us.Gender = txtGender.Text;

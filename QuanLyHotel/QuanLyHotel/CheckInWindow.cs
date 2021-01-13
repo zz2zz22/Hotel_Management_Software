@@ -282,6 +282,8 @@ namespace QuanLyHotel
         private void CheckInWindow_Load(object sender, EventArgs e)
         {
             this.loadData();
+            dtCheckIn.Value.ToString("dd-MM-yyyy");
+            dtCheckIn.Text = DateTime.Now.ToString();
         }
 
         private void txtSearchCustomer_TextChanged(object sender, EventArgs e)

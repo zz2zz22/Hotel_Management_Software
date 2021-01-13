@@ -360,6 +360,7 @@
             this.lbCheckOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbCheckOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.lbCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.lbCheckOut.CustomFormat = "dd-MM-yyyy";
             this.lbCheckOut.Location = new System.Drawing.Point(176, 105);
             this.lbCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.lbCheckOut.Name = "lbCheckOut";

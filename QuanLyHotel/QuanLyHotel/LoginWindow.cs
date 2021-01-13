@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +30,7 @@ namespace QuanLyHotel
             txtPassword.Text = b;
         }
 
-
+        MD5 mD5 = MD5.Create();
         //Move
         private bool dragging = false;
         private Point StartPoint = new Point(0, 0);
@@ -71,7 +72,16 @@ namespace QuanLyHotel
             UserDTO tn = new UserDTO();
             tn.Idm = txtUsername.Text;
             string IDU = txtUsername.Text;
-            string PASSWORD = txtPassword.Text;
+            string PASSWORD = "";
+            byte[] b = Encoding.ASCII.GetBytes(txtPassword.Text);
+            byte[] hash = mD5.ComputeHash(b);
+            StringBuilder sb = new StringBuilder();
+            foreach (var a in hash)
+            {
+                sb.Append(a.ToString("X2"));
+                PASSWORD = sb.ToString();
+            }
+            //string PASSWORD = txtPassword.Text;
             if (txtUsername.Text == "")
             {
                 errorProvider1.SetError(txtUsername, "Không được để trống!");

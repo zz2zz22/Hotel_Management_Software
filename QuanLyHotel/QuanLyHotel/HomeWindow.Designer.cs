@@ -99,7 +99,7 @@
             // txtSearchRoom
             // 
             this.txtSearchRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchRoom.Location = new System.Drawing.Point(108, 103);
+            this.txtSearchRoom.Location = new System.Drawing.Point(157, 105);
             this.txtSearchRoom.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchRoom.MaxLength = 40;
             this.txtSearchRoom.Name = "txtSearchRoom";
