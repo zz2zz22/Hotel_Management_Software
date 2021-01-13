@@ -55,7 +55,7 @@
             this.btLoadService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLoadService.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLoadService.ForeColor = System.Drawing.Color.White;
-            this.btLoadService.Location = new System.Drawing.Point(31, 70);
+            this.btLoadService.Location = new System.Drawing.Point(31, 88);
             this.btLoadService.Margin = new System.Windows.Forms.Padding(4);
             this.btLoadService.Name = "btLoadService";
             this.btLoadService.Size = new System.Drawing.Size(99, 38);
@@ -69,7 +69,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(24, 12);
+            this.label16.Location = new System.Drawing.Point(19, 30);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(119, 38);
@@ -222,6 +222,7 @@
             this.Controls.Add(this.btLoadService);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.dtgvService);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportWindows";
             this.Size = new System.Drawing.Size(1283, 682);

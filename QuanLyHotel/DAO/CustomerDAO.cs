@@ -47,7 +47,7 @@ namespace customerDAO
                     cmd.Connection = con;
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@iDC", ctm.IDC);
+                    cmd.Parameters.AddWithValue("@idc", ctm.IDC);
                     cmd.Parameters.AddWithValue("@name", ctm.NAME);
                     cmd.Parameters.AddWithValue("@phone", ctm.PHONE);
                     cmd.Parameters.AddWithValue("@date", ctm.DATE);

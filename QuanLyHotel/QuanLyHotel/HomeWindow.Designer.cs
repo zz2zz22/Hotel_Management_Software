@@ -58,7 +58,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(9, 21);
+            this.label4.Location = new System.Drawing.Point(19, 30);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 38);
@@ -84,7 +84,7 @@
             this.btLoadRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLoadRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLoadRoom.ForeColor = System.Drawing.Color.White;
-            this.btLoadRoom.Location = new System.Drawing.Point(585, 103);
+            this.btLoadRoom.Location = new System.Drawing.Point(19, 104);
             this.btLoadRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btLoadRoom.Name = "btLoadRoom";
             this.btLoadRoom.Size = new System.Drawing.Size(99, 34);
@@ -102,6 +102,7 @@
             this.txtSearchRoom.Name = "txtSearchRoom";
             this.txtSearchRoom.Size = new System.Drawing.Size(469, 35);
             this.txtSearchRoom.TabIndex = 196;
+            this.txtSearchRoom.Visible = false;
             // 
             // label6
             // 
@@ -113,6 +114,7 @@
             this.label6.Size = new System.Drawing.Size(83, 26);
             this.label6.TabIndex = 195;
             this.label6.Text = "Search";
+            this.label6.Visible = false;
             // 
             // label
             // 
@@ -302,7 +304,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(896, 21);
+            this.label3.Location = new System.Drawing.Point(896, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(291, 38);

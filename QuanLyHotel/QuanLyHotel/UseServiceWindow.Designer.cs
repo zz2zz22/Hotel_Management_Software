@@ -144,7 +144,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(16, 11);
+            this.label7.Location = new System.Drawing.Point(120, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(310, 51);
@@ -233,7 +233,7 @@
             this.dtDateService.Name = "dtDateService";
             this.dtDateService.Size = new System.Drawing.Size(207, 30);
             this.dtDateService.TabIndex = 236;
-            this.dtDateService.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
+            this.dtDateService.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
             // 
             // txtNumberService
             // 
@@ -407,6 +407,7 @@
             this.MinimumSize = new System.Drawing.Size(573, 761);
             this.Name = "UseServiceWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.UseServiceWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();

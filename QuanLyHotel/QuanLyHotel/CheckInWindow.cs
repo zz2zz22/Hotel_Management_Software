@@ -32,7 +32,7 @@ namespace QuanLyHotel
             lbCost.Text = cost;
             //this.loadData();
         }
-        private bool isExsit = false;
+        private bool isExsit = false, nameCheck = false;
         private CustomerBUS ctmBus;
         private RoomBUS rmBUS;
         private BillBUS bllBUS;
@@ -61,9 +61,9 @@ namespace QuanLyHotel
 
 
             DataGridViewTextBoxColumn NAME = new DataGridViewTextBoxColumn();
-            NAME.Name = "idc";
+            NAME.Name = "name";
             NAME.HeaderText = "Name:";
-            NAME.DataPropertyName = "idc";
+            NAME.DataPropertyName = "name";
             NAME.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvCustomer.Columns.Add(NAME);
 
@@ -106,9 +106,9 @@ namespace QuanLyHotel
 
 
             DataGridViewTextBoxColumn NAME = new DataGridViewTextBoxColumn();
-            NAME.Name = "idc";
+            NAME.Name = "name";
             NAME.HeaderText = "Name:";
-            NAME.DataPropertyName = "idc";
+            NAME.DataPropertyName = "name";
             NAME.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvCustomer.Columns.Add(NAME);
 
@@ -138,84 +138,150 @@ namespace QuanLyHotel
         //
         //---- EVENTS
         //
+
+        
         #region Events
         private void BtCheckIn_Click(object sender, EventArgs e)
         {
-
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
             TimeSpan a = dtCheckOut.Value.Subtract(dtCheckIn.Value);
-
-
-            if (isExsit == false)
-            {
-                ctmBus = new CustomerBUS();
-                CustomerDTO ctm = new CustomerDTO();
-                ctm.IDC = txtBoxCustomerName.Text + DateTime.Now;
-                ctm.NAME = txtBoxCustomerName.Text;
-                ctm.PHONE = txtBoxCustomerPhone.Text;
-                ctm.DATE = DateTime.Parse(dtCheckIn.Text);
-                ctm.CMND = txtBoxCustomerID.Text;
-                bool kq2 = ctmBus.add(ctm);
-            }
             
-
-
-            //Thêm điều kiện khi chưa chọn Room
-            if (lbNameRoom.Text == "")
+            if (txtBoxCustomerName.Text == "")
             {
-                if (lbKind.Text == "")
-                {
-                    if (lbBedsAmount.Text == "")
-                    {
-                        if (lbCost.Text == "")
-                        {
-                            MessageBox.Show("Please choose a room first !");
-                            this.Close();
-                        }
-                    }
-                }
-
+                errorProvider1.SetError(txtBoxCustomerName, "not null!");
+            }
+            else if (txtBoxCustomerID.Text == "")
+            {
+                errorProvider2.SetError(txtBoxCustomerID, "not null!");
+            }
+            else if (txtBoxCustomerPhone.Text == "")
+            {
+                errorProvider3.SetError(txtBoxCustomerPhone, "not null!");
             }
             else
             {
-                decimal x = a.Days + 1;
-                decimal y = Decimal.Parse(lbCost.Text) * x;
-                bllBUS = new BillBUS();
-                BillDTO bll = new BillDTO();
-                bll.IDB = DateTime.Now.ToString("mm/dd/yyyy:mm:ss");
-                bll.IDC = txtBoxCustomerName.Text;
-                bll.IDR = lbNameRoom.Text;
-                bll.CheckIn = DateTime.Parse(dtCheckIn.Text);
-                bll.CheckOut = DateTime.Parse(dtCheckOut.Text);
-                bll.COST = Decimal.Parse(lbCost.Text) * x;
-                bool kq = bllBUS.add(bll);
+                //ko bấm load
+                if (isExsit == false)
+                {
+                    foreach (DataGridViewRow row in dtgvCustomer.Rows)
+                    {
+                        //click vào load nhưng trùng tên
+                        if (row.Cells[0].Value.ToString() == txtBoxCustomerName.Text)
+                        {
+                            nameCheck = true;
+                            MessageBox.Show("Khách hàng đã tồn tại, sẽ dùng dữ liệu đã tồn tại của khách hàng!");
+                        }
+                    }
+                    if (nameCheck == false)
+                    {
+                        ctmBus = new CustomerBUS();
+                        CustomerDTO ctm = new CustomerDTO();
+                        ctm.IDC = txtBoxCustomerName.Text;
+                        ctm.NAME = txtBoxCustomerName.Text;
+                        ctm.PHONE = txtBoxCustomerPhone.Text;
+                        ctm.DATE = DateTime.Parse(dtCheckIn.Text);
+                        ctm.CMND = txtBoxCustomerID.Text;
+                        bool kq2 = ctmBus.add(ctm);
+                    }
+                }
+                //bấm load
+                if (isExsit == true)
+                {
+                    //click vào load
+                    foreach (DataGridViewRow row in dtgvCustomer.Rows)
+                    {
+                        //click vào load nhưng trùng tên
+                        if (row.Cells[0].Value.ToString() == txtBoxCustomerName.Text)
+                        {
+                            nameCheck = true;
+                        }
+                    }
+                    if (nameCheck == false)
+                    {
+                        ctmBus = new CustomerBUS();
+                        CustomerDTO ctm = new CustomerDTO();
+                        ctm.IDC = txtBoxCustomerName.Text;
+                        ctm.NAME = txtBoxCustomerName.Text;
+                        ctm.PHONE = txtBoxCustomerPhone.Text;
+                        ctm.DATE = DateTime.Parse(dtCheckIn.Text);
+                        ctm.CMND = txtBoxCustomerID.Text;
+                        bool kq2 = ctmBus.add(ctm);
+                    }
+                }
+                  
 
-                if (kq == false)
-                    MessageBox.Show("Fail!");
+                //Thêm điều kiện khi chưa chọn Room
+                if (lbNameRoom.Text == "")
+                {
+                    if (lbKind.Text == "")
+                    {
+                        if (lbBedsAmount.Text == "")
+                        {
+                            if (lbCost.Text == "")
+                            {
+                                MessageBox.Show("Please choose a room first !");
+                                this.Close();
+
+                            }
+                        }
+                    }
+
+                }
                 else
                 {
-                    rmBUS = new RoomBUS();
-                    RoomDTO rm = new RoomDTO();
-                    rm.Idr = lbNameRoom.Text;
-                    rm.Status = "Có Khách";
-                    bool kq1 = rmBUS.editStatus(rm);
+                    decimal x = a.Days + 1;
+                    decimal y = Decimal.Parse(lbCost.Text) * x;
+                    bllBUS = new BillBUS();
+                    BillDTO bll = new BillDTO();
+                    bll.IDB = DateTime.Now.ToString();
+                    bll.IDC = txtBoxCustomerName.Text;
+                    bll.IDR = lbNameRoom.Text;
+                    bll.CheckIn = DateTime.Parse(dtCheckIn.Text);
+                    bll.CheckOut = DateTime.Parse(dtCheckOut.Text);
+                    bll.COST = Decimal.Parse(lbCost.Text) * x;
+                    bool kq = bllBUS.add(bll);
+
                     if (kq == false)
                         MessageBox.Show("Fail!");
                     else
-                        MessageBox.Show("Sussces");
+                    {
+                        rmBUS = new RoomBUS();
+                        RoomDTO rm = new RoomDTO();
+                        rm.Idr = lbNameRoom.Text;
+                        rm.Status = "Có Khách";
+                        bool kq1 = rmBUS.editStatus(rm);
+                        if (kq == false)
+                            MessageBox.Show("Fail!");
+                        else
+                            MessageBox.Show("Sussces");
+                    }
+                    isExsit = false;
+                    nameCheck = false;
+                    this.Close();
                 }
-                isExsit = false;
-                this.Close();
             }
+            
         }
 
         private void dtgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int numrow;
             numrow = e.RowIndex;
-            txtBoxCustomerName.Text = dtgvCustomer.Rows[numrow].Cells[0].Value.ToString();
-            txtBoxCustomerID.Text = dtgvCustomer.Rows[numrow].Cells[1].Value.ToString();
-            txtBoxCustomerPhone.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();
-            isExsit = true;
+            if(numrow > -1)
+            {
+                txtBoxCustomerName.Text = dtgvCustomer.Rows[numrow].Cells[0].Value.ToString();
+                txtBoxCustomerID.Text = dtgvCustomer.Rows[numrow].Cells[1].Value.ToString();
+                txtBoxCustomerPhone.Text = dtgvCustomer.Rows[numrow].Cells[2].Value.ToString();
+                isExsit = true;
+            }    
+            
+        }
+
+        private void CheckInWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
         }
 
         private void btLoadCustomer_Click(object sender, EventArgs e)

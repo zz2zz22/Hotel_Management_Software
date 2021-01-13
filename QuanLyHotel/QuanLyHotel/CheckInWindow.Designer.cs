@@ -182,7 +182,7 @@
             this.dtCheckIn.Name = "dtCheckIn";
             this.dtCheckIn.Size = new System.Drawing.Size(199, 30);
             this.dtCheckIn.TabIndex = 210;
-            this.dtCheckIn.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
+            this.dtCheckIn.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -251,12 +251,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(12, 10);
+            this.label5.Location = new System.Drawing.Point(19, 30);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(244, 51);
+            this.label5.Size = new System.Drawing.Size(189, 38);
             this.label5.TabIndex = 199;
             this.label5.Text = "CHECK IN";
             // 
@@ -335,7 +335,7 @@
             this.dtCheckOut.Name = "dtCheckOut";
             this.dtCheckOut.Size = new System.Drawing.Size(199, 30);
             this.dtCheckOut.TabIndex = 221;
-            this.dtCheckOut.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
+            this.dtCheckOut.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
             // 
             // label9
             // 
@@ -468,6 +468,7 @@
             this.Name = "CheckInWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckInWindow";
+            this.Load += new System.EventHandler(this.CheckInWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();

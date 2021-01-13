@@ -170,11 +170,15 @@ namespace QuanLyHotel
         {
             int numrow;
             numrow = e.RowIndex;
-            lbName.Text = dtgvRoom.Rows[numrow].Cells[0].Value.ToString();
-            lbStatus.Text = dtgvRoom.Rows[numrow].Cells[1].Value.ToString();
-            lbBedsAmount.Text = dtgvRoom.Rows[numrow].Cells[2].Value.ToString();
-            lbKind.Text = dtgvRoom.Rows[numrow].Cells[3].Value.ToString();
-            lbCost.Text = Convert.ToString(dtgvRoom.Rows[numrow].Cells[4].Value);
+            if(numrow > -1)
+            {
+                lbName.Text = dtgvRoom.Rows[numrow].Cells[0].Value.ToString();
+                lbStatus.Text = dtgvRoom.Rows[numrow].Cells[1].Value.ToString();
+                lbBedsAmount.Text = dtgvRoom.Rows[numrow].Cells[2].Value.ToString();
+                lbKind.Text = dtgvRoom.Rows[numrow].Cells[3].Value.ToString();
+                lbCost.Text = Convert.ToString(dtgvRoom.Rows[numrow].Cells[4].Value);
+            }    
+            
             
         }
 

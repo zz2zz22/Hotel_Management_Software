@@ -91,6 +91,13 @@ namespace QuanLyHotel
             Email.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvAccount.Columns.Add(Email);
 
+            DataGridViewTextBoxColumn Level = new DataGridViewTextBoxColumn();
+            Level.Name = "level";
+            Level.HeaderText = "Level";
+            Level.DataPropertyName = "level";
+            Level.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgvAccount.Columns.Add(Level);
+
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvAccount.DataSource];
             myCurrencyManager.Refresh();
 
@@ -159,6 +166,13 @@ namespace QuanLyHotel
             Email.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgvAccount.Columns.Add(Email);
 
+            DataGridViewTextBoxColumn Level = new DataGridViewTextBoxColumn();
+            Level.Name = "level";
+            Level.HeaderText = "Level";
+            Level.DataPropertyName = "level";
+            Level.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgvAccount.Columns.Add(Level);
+
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvAccount.DataSource];
             myCurrencyManager.Refresh();
 
@@ -192,55 +206,176 @@ namespace QuanLyHotel
         }
         private void BtEditAccount_Click(object sender, EventArgs e)
         {
-            userBUS = new UserBUS();
-            UserDTO ctm = new UserDTO();
-            ctm.Idm = ctm.Idm;
-            ctm.Password = ctm.Password;
-            ctm.Name = lbName.Text;
-            ctm.Phone = lbPhone.Text;
-            ctm.Email = lbEmail.Text;
-            ctm.Cmnd = lbCmnd.Text;
-            ctm.Level = ctm.Level;
-            ctm.Gender = lbGender.Text;
-            bool kq = userBUS.edit(ctm);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+            errorProvider5.Clear();
+            errorProvider6.Clear();
+            if (lbPassword.Text == "")
+            {
+                errorProvider1.SetError(lbPassword, "not null!");
+
+            }
+            else if (lbGender.Text == "")
+            {
+                errorProvider2.SetError(lbGender, "not null!");
+            }
+            else if(lbPhone.Text == "")
+            {
+                errorProvider3.SetError(lbPhone, "not null!");
+            }
+            else if(lbEmail.Text == "")
+            {
+                errorProvider4.SetError(lbEmail, "not null!");
+
+            }
+            else if(lbCmnd.Text == "")
+            {
+                errorProvider5.SetError(lbCmnd, "not null!");
+            }
+            else if(lbLevel.Text == "")
+            {
+
+                errorProvider6.SetError(lbLevel, "not null!");
+            }
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                userBUS = new UserBUS();
+                UserDTO ctm = new UserDTO();
+                ctm.Idm = lbUsername.Text;
+                ctm.Password = lbPassword.Text;
+                ctm.Name = lbName.Text;
+                ctm.Phone = lbPhone.Text;
+                ctm.Email = lbEmail.Text;
+                ctm.Cmnd = lbCmnd.Text;
+                ctm.Level = Convert.ToInt32(lbLevel.Text);
+                ctm.Gender = lbGender.Text;
+                bool kq = userBUS.edit(ctm);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+                //Us.Idm = txtUsername.Text;
+                //Us.Name = txtName.Text;
+                //Us.Password = txtPassword.Text;
+                //Us.Phone = txtPhone.Text;
+                //Us.Email = txtEmail.Text;
+                //Us.Gender = txtGender.Text;
+                //Us.Cmnd = txtIdentifyCard.Text;
+                //Us.Level = 1;
+                //bool kq = UsBus.add(Us);
+            }    
+            
         }
         private void BtDeleteAcount_Click(object sender, EventArgs e)
         {
-            userBUS = new UserBUS();
-            UserDTO ctm = new UserDTO();
-            ctm.Idm = ctm.Idm;
-            ctm.Password = ctm.Password;
-            ctm.Name = lbName.Text;
-            ctm.Phone = lbPhone.Text;
-            ctm.Email = lbEmail.Text;
-            ctm.Cmnd = lbCmnd.Text;
-            ctm.Level = ctm.Level;
-            ctm.Gender = lbGender.Text;
-            bool kq = userBUS.delete(ctm);
-            if (kq == false)
-                MessageBox.Show("Fail!");
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+            errorProvider5.Clear();
+            errorProvider6.Clear();
+            if (lbPassword.Text == "")
+            {
+                errorProvider1.SetError(lbPassword, "not null!");
+
+            }
+            else if (lbGender.Text == "")
+            {
+                errorProvider2.SetError(lbGender, "not null!");
+            }
+            else if (lbPhone.Text == "")
+            {
+                errorProvider3.SetError(lbPhone, "not null!");
+            }
+            else if (lbEmail.Text == "")
+            {
+                errorProvider4.SetError(lbEmail, "not null!");
+
+            }
+            else if (lbCmnd.Text == "")
+            {
+                errorProvider5.SetError(lbCmnd, "not null!");
+            }
+            else if (lbLevel.Text == "")
+            {
+
+                errorProvider6.SetError(lbLevel, "not null!");
+            }
             else
-                MessageBox.Show("Sussces");
-            this.loadData();
+            {
+                userBUS = new UserBUS();
+                UserDTO ctm = new UserDTO();
+                ctm.Idm = lbUsername.Text;
+                ctm.Password = lbPassword.Text;
+                ctm.Name = lbName.Text;
+                ctm.Phone = lbPhone.Text;
+                ctm.Email = lbEmail.Text;
+                ctm.Cmnd = lbCmnd.Text;
+                ctm.Level = Convert.ToInt32(lbLevel.Text);
+                ctm.Gender = lbGender.Text;
+                bool kq = userBUS.delete(ctm);
+                if (kq == false)
+                    MessageBox.Show("Fail!");
+                else
+                    MessageBox.Show("Sussces");
+                this.loadData();
+            }
+            
         }
 
         private void dtgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int numrow;
             numrow = e.RowIndex;
-            lbUsername.Text = dtgvAccount.Rows[numrow].Cells[0].Value.ToString();
-            lbPassword.Text = dtgvAccount.Rows[numrow].Cells[1].Value.ToString();
-            lbName.Text = dtgvAccount.Rows[numrow].Cells[2].Value.ToString();
-            lbGender.Text = dtgvAccount.Rows[numrow].Cells[3].Value.ToString();
-            lbEmail.Text = dtgvAccount.Rows[numrow].Cells[6].Value.ToString();
-            lbPhone.Text = dtgvAccount.Rows[numrow].Cells[5].Value.ToString();
-            lbCmnd.Text = dtgvAccount.Rows[numrow].Cells[4].Value.ToString();
+            if(numrow>-1)
+            {
+                lbUsername.Text = dtgvAccount.Rows[numrow].Cells[0].Value.ToString();
+                lbPassword.Text = dtgvAccount.Rows[numrow].Cells[1].Value.ToString();
+                lbName.Text = dtgvAccount.Rows[numrow].Cells[2].Value.ToString();
+                lbGender.Text = dtgvAccount.Rows[numrow].Cells[3].Value.ToString();
+                lbEmail.Text = dtgvAccount.Rows[numrow].Cells[6].Value.ToString();
+                lbPhone.Text = dtgvAccount.Rows[numrow].Cells[5].Value.ToString();
+                lbCmnd.Text = dtgvAccount.Rows[numrow].Cells[4].Value.ToString();
+                lbLevel.Text = dtgvAccount.Rows[numrow].Cells[7].Value.ToString();
+            }    
+            
         }
         #endregion
+
+        private void lbPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int keydown = e.KeyChar;
+            if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
+            {
+                errorProvider3.SetError(lbPhone, "Không được nhập chữ");
+                e.KeyChar = (char)0;
+            }
+            else
+            {
+                errorProvider3.Clear();
+            }
+        }
+
+        private void lbLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int keydown = e.KeyChar;
+            if (keydown > 57 || (keydown < 48 && keydown > 9 && keydown < 7))
+            {
+                errorProvider6.SetError(lbLevel, "Không được nhập chữ");
+                e.KeyChar = (char)0;
+            }
+            else
+            {
+                errorProvider6.Clear();
+            }
+        }
+
+        private void AccountWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
+        }
     }
 }

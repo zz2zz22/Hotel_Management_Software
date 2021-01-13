@@ -86,6 +86,7 @@
             this.txtSearchRoomService.Name = "txtSearchRoomService";
             this.txtSearchRoomService.Size = new System.Drawing.Size(395, 35);
             this.txtSearchRoomService.TabIndex = 210;
+            this.txtSearchRoomService.Visible = false;
             // 
             // button1
             // 
@@ -101,6 +102,7 @@
             this.button1.TabIndex = 209;
             this.button1.Text = "Load";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label2
@@ -114,6 +116,7 @@
             this.label2.Size = new System.Drawing.Size(83, 26);
             this.label2.TabIndex = 207;
             this.label2.Text = "Search";
+            this.label2.Visible = false;
             // 
             // dtgvUseService
             // 
@@ -127,6 +130,7 @@
             this.dtgvUseService.RowHeadersWidth = 51;
             this.dtgvUseService.Size = new System.Drawing.Size(499, 383);
             this.dtgvUseService.TabIndex = 206;
+            this.dtgvUseService.Visible = false;
             // 
             // label1
             // 
@@ -134,17 +138,16 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(757, 22);
+            this.label1.Location = new System.Drawing.Point(757, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(370, 38);
             this.label1.TabIndex = 205;
             this.label1.Text = "Use Service Information";
+            this.label1.Visible = false;
             // 
             // txtSearchService1
             // 
-            this.txtSearchService1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtSearchService1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchService1.Location = new System.Drawing.Point(117, 324);
             this.txtSearchService1.Margin = new System.Windows.Forms.Padding(4);
@@ -223,6 +226,7 @@
             this.txtCostService.Name = "txtCostService";
             this.txtCostService.Size = new System.Drawing.Size(339, 34);
             this.txtCostService.TabIndex = 219;
+            this.txtCostService.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostService_KeyPress_1);
             // 
             // txtKindService
             // 
@@ -231,7 +235,7 @@
             this.txtKindService.FormattingEnabled = true;
             this.txtKindService.Items.AddRange(new object[] {
             "Food",
-            "Laundry"});
+            "Drink"});
             this.txtKindService.Location = new System.Drawing.Point(107, 139);
             this.txtKindService.Margin = new System.Windows.Forms.Padding(4);
             this.txtKindService.MaxLength = 40;
@@ -255,7 +259,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(19, 26);
+            this.label16.Location = new System.Drawing.Point(19, 30);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(308, 38);
@@ -297,8 +301,9 @@
             // 
             // dtgvService
             // 
-            this.dtgvService.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dtgvService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvService.Location = new System.Drawing.Point(19, 367);
             this.dtgvService.Margin = new System.Windows.Forms.Padding(4);

@@ -144,10 +144,14 @@ namespace QuanLyHotel
         {
             int numrow;
             numrow = e.RowIndex;
-            txtNameRoom.Text = dtgvRoom.Rows[numrow].Cells[0].Value.ToString();
-            txtKindRoom.Text = dtgvRoom.Rows[numrow].Cells[3].Value.ToString();
-            txtBedsAmount.Text = dtgvRoom.Rows[numrow].Cells[2].Value.ToString();
-            txtCost.Text = Convert.ToString(dtgvRoom.Rows[numrow].Cells[4].Value);
+            if(numrow > -1)
+            {
+                txtNameRoom.Text = dtgvRoom.Rows[numrow].Cells[0].Value.ToString();
+                txtKindRoom.Text = dtgvRoom.Rows[numrow].Cells[3].Value.ToString();
+                txtBedsAmount.Text = dtgvRoom.Rows[numrow].Cells[2].Value.ToString();
+                txtCost.Text = Convert.ToString(dtgvRoom.Rows[numrow].Cells[4].Value);
+            }    
+            
         }
 
         private void TxtBedsAmount_KeyPress(object sender, KeyPressEventArgs e)
@@ -352,6 +356,11 @@ namespace QuanLyHotel
                     this.loadData(listTimKiem);
                 }
             }
+        }
+
+        private void RoomWindow_Load(object sender, EventArgs e)
+        {
+            this.loadData();
         }
     }
 }
