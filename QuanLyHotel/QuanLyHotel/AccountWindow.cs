@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using userBUS;
 using userDTO;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using System.IO;
 
 namespace QuanLyHotel
 {
@@ -19,6 +22,10 @@ namespace QuanLyHotel
             InitializeComponent();
             //loadData();
         }
+        FilterInfoCollection filterInfoCollection;
+        VideoCaptureDevice videoCaptureDevice;
+        bool checkCamera = false;
+        string nameMNG = "";
         private UserBUS userBUS;
 
         //
@@ -340,6 +347,19 @@ namespace QuanLyHotel
                 lbPhone.Text = dtgvAccount.Rows[numrow].Cells[5].Value.ToString();
                 lbCmnd.Text = dtgvAccount.Rows[numrow].Cells[4].Value.ToString();
                 lbLevel.Text = dtgvAccount.Rows[numrow].Cells[7].Value.ToString();
+
+                nameMNG = lbUsername.Text;
+                if (File.Exists("ac-" + nameMNG + ".bmp"))
+                {
+                    openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                    pictureBox1.Image = new Bitmap("ac-" + nameMNG + ".bmp");
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
+                    
+                
             }    
             
         }
@@ -376,6 +396,68 @@ namespace QuanLyHotel
         private void AccountWindow_Load(object sender, EventArgs e)
         {
             this.loadData();
+
+            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo filterInfo in filterInfoCollection)
+                cboCamera.Items.Add(filterInfo.Name);
+            cboCamera.SelectedIndex = 0;
+            videoCaptureDevice = new VideoCaptureDevice();
+        }
+
+        private void txtSearchAccount_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearchAccount.Text == "")
+            {
+                this.loadData();
+            }
+            else
+            {
+                string Key = txtSearchAccount.Text.Trim();
+                if (Key == null || Key == string.Empty || Key.Length == 0)
+                {
+                    List<UserDTO> listTimKiem = userBUS.select();
+                    this.loadData(listTimKiem);
+                }
+                else
+                {
+                    List<UserDTO> listTimKiem = userBUS.search(Key);
+                    this.loadData(listTimKiem);
+                }
+            }
+        }
+
+        private void btnCapture_Click(object sender, EventArgs e)
+        {
+            if (checkCamera == false)
+            {
+                videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cboCamera.SelectedIndex].MonikerString);
+                videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
+                videoCaptureDevice.Start();
+                btnCapture.Text = "Stop";
+                checkCamera = true;
+            }
+            else
+            {
+                checkCamera = false;
+                videoCaptureDevice.Stop();
+                btnCapture.Text = "Start";
+            }
+        }
+
+        private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            pictureBox1.Image = new Bitmap("ac-" + nameMNG + ".bmp");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image.Save("ac-" + nameMNG + ".bmp");
         }
     }
 }

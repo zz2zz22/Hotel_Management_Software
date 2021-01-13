@@ -576,5 +576,25 @@ namespace QuanLyHotel
                 errorProvider3.Clear();
             }
         }
+
+        private void txtKindService_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearchService1_TextChanged(object sender, EventArgs e)
+        {
+            string Key = txtSearchService1.Text.Trim();
+            if (Key == null || Key == string.Empty || Key.Length == 0)
+            {
+                List<ServiceDTO> listTimKiem = srvBUS.select();
+                this.loadData(listTimKiem);
+            }
+            else
+            {
+                List<ServiceDTO> listTimKiem = srvBUS.search(Key);
+                this.loadData(listTimKiem);
+            }
+        }
     }
 }

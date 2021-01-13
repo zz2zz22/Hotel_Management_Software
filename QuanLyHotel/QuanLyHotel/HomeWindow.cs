@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using roomDTO;
 using roomBUS;
 using roomDAO;
+using System.IO;
 
 namespace QuanLyHotel
 {
@@ -18,11 +19,7 @@ namespace QuanLyHotel
         public HomeWindow()
         {
             InitializeComponent();
-            //if ( this.DesignMode is false)
-            //{
-            //    this.loadData();
-            //    this.LoadRoom();
-            //}
+            
         }
         string username = "";
         public HomeWindow(string Username)
@@ -53,7 +50,7 @@ namespace QuanLyHotel
 
                 btn.Click += btn_Click;
                 btn.Tag = item;
-
+                btn.Click += btnNew_Click;
                 // chỉnh màu trạng thái
                 btn.BackColor = Color.Aqua;
                 switch (item.Status)
@@ -82,6 +79,24 @@ namespace QuanLyHotel
 
                 flpRoom.Controls.Add(btn);
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            if (lbName.Text != "")
+            {
+                if (File.Exists("rm-" + lbName.Text + ".bmp"))
+                {
+                    openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                    pictureBox1.Image = new Bitmap("rm-" + lbName.Text + ".bmp");
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
+            }
+
         }
 
         #region LoadData
@@ -177,6 +192,18 @@ namespace QuanLyHotel
                 lbBedsAmount.Text = dtgvRoom.Rows[numrow].Cells[2].Value.ToString();
                 lbKind.Text = dtgvRoom.Rows[numrow].Cells[3].Value.ToString();
                 lbCost.Text = Convert.ToString(dtgvRoom.Rows[numrow].Cells[4].Value);
+                if (lbName.Text != "")
+                {
+                    if (File.Exists("rm-" + lbName.Text + ".bmp"))
+                    {
+                        openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                        pictureBox1.Image = new Bitmap("rm-" + lbName.Text + ".bmp");
+                    }
+                    else
+                    {
+                        pictureBox1.Image = null;
+                    }
+                }
             }    
             
             
@@ -214,5 +241,21 @@ namespace QuanLyHotel
             this.LoadRoom();
         }
         #endregion
+
+        private void lbName_TextChanged(object sender, EventArgs e)
+        {
+            if(lbName.Text != "")
+            {
+                if (File.Exists("rm-" + lbName.Text + ".bmp"))
+                {
+                    openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                    pictureBox1.Image = new Bitmap("rm-" + lbName.Text + ".bmp");
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
+            }    
+        }
     }
 }

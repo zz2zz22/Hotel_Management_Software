@@ -155,6 +155,7 @@
             this.txtSearchService1.Name = "txtSearchService1";
             this.txtSearchService1.Size = new System.Drawing.Size(589, 35);
             this.txtSearchService1.TabIndex = 224;
+            this.txtSearchService1.TextChanged += new System.EventHandler(this.txtSearchService1_TextChanged);
             // 
             // btLoadService
             // 
@@ -242,6 +243,7 @@
             this.txtKindService.Name = "txtKindService";
             this.txtKindService.Size = new System.Drawing.Size(155, 34);
             this.txtKindService.TabIndex = 218;
+            this.txtKindService.SelectedValueChanged += new System.EventHandler(this.txtKindService_SelectedValueChanged);
             // 
             // txtNameService
             // 

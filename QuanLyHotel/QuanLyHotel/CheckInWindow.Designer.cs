@@ -182,7 +182,7 @@
             this.dtCheckIn.Name = "dtCheckIn";
             this.dtCheckIn.Size = new System.Drawing.Size(199, 30);
             this.dtCheckIn.TabIndex = 210;
-            this.dtCheckIn.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
+            this.dtCheckIn.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -286,6 +286,7 @@
             this.txtSearchCustomer.Name = "txtSearchCustomer";
             this.txtSearchCustomer.Size = new System.Drawing.Size(293, 31);
             this.txtSearchCustomer.TabIndex = 197;
+            this.txtSearchCustomer.TextChanged += new System.EventHandler(this.txtSearchCustomer_TextChanged);
             // 
             // label1
             // 
@@ -335,7 +336,7 @@
             this.dtCheckOut.Name = "dtCheckOut";
             this.dtCheckOut.Size = new System.Drawing.Size(199, 30);
             this.dtCheckOut.TabIndex = 221;
-            this.dtCheckOut.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
+            this.dtCheckOut.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // label9
             // 

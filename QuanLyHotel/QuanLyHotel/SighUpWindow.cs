@@ -65,6 +65,7 @@ namespace QuanLyHotel
             errorProvider6.Clear();
             errorProvider7.Clear();
             errorProvider8.Clear();
+            errorProvider12.Clear();
             errorProvider11.Clear();
 
             UserBUS UsBus = new UserBUS();
@@ -104,6 +105,10 @@ namespace QuanLyHotel
             if(txtPassword.Text!=txtRePassword.Text)
             {
                 errorProvider11.SetError(txtRePassword, "Mật khẩu không trùng khớp!");
+            }
+            if (txtPassword.Text.Length < 4)
+            {
+                errorProvider12.SetError(txtRePassword, "Mật khẩu phải lớn hơn 4 kí tự");
             }
             else
             {
