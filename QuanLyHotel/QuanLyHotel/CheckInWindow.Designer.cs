@@ -177,7 +177,7 @@
             this.dtCheckIn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtCheckIn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.dtCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtCheckIn.CustomFormat = "dd-MM-yyyy";
+            //this.dtCheckIn.CustomFormat = "dd-MM-yyyy";
             this.dtCheckIn.Location = new System.Drawing.Point(176, 98);
             this.dtCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.dtCheckIn.Name = "dtCheckIn";
@@ -332,7 +332,7 @@
             this.dtCheckOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtCheckOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.dtCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtCheckOut.CustomFormat = "dd-MM-yyyy";
+            //this.dtCheckOut.CustomFormat = "dd-MM-yyyy";
             this.dtCheckOut.Location = new System.Drawing.Point(176, 138);
             this.dtCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.dtCheckOut.Name = "dtCheckOut";

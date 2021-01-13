@@ -452,7 +452,13 @@ namespace QuanLyHotel
         private void btnOpen_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            pictureBox1.Image = new Bitmap("ac-" + nameMNG + ".bmp");
+            
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+                nameMNG = lbName.Text;
+            }
+            //pictureBox1.Image = new Bitmap("ac-" + nameMNG + ".bmp");
         }
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -403,13 +403,20 @@ namespace QuanLyHotel
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image.Save("ctm-"+nameCTM+ ".bmp");
+            pictureBox1.Image.Save("ctm-" + nameCTM + ".bmp");
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            
             openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            pictureBox1.Image = new Bitmap("ctm-" + nameCTM + ".bmp");
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+                nameCTM = txtNameCustomer.Text;
+            }
+               // pictureBox1.Image = new Bitmap("ctm-" + nameCTM + ".bmp");
         }
     }
 }

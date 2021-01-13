@@ -129,7 +129,16 @@ namespace QuanLyHotel
 
                 UserDTO tn = new UserDTO();
                 string IDU = txtUsername.Text;
-                string PASSWORD = txtPassword.Text;
+                string PASSWORD = "";
+                byte[] b = Encoding.ASCII.GetBytes(txtPassword.Text);
+                byte[] hash = mD5.ComputeHash(b);
+                StringBuilder sb = new StringBuilder();
+                foreach (var a in hash)
+                {
+                    sb.Append(a.ToString("X2"));
+                    PASSWORD = sb.ToString();
+                }
+                //string PASSWORD = txtPassword.Text;
                 if (txtUsername.Text == "")
                 {
                     errorProvider1.SetError(txtUsername, "Không được để trống!");
@@ -168,7 +177,16 @@ namespace QuanLyHotel
 
                 UserDTO tn = new UserDTO();
                 string IDU = txtUsername.Text;
-                string PASSWORD = txtPassword.Text;
+                string PASSWORD = "";
+                byte[] b = Encoding.ASCII.GetBytes(txtPassword.Text);
+                byte[] hash = mD5.ComputeHash(b);
+                StringBuilder sb = new StringBuilder();
+                foreach (var a in hash)
+                {
+                    sb.Append(a.ToString("X2"));
+                    PASSWORD = sb.ToString();
+                }
+                //string PASSWORD = txtPassword.Text;
                 if (txtUsername.Text == "")
                 {
                     errorProvider1.SetError(txtUsername, "Không được để trống!");

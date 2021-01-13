@@ -127,7 +127,7 @@
             // 
             this.dtBirthday.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.dtBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtBirthday.CustomFormat = "dd-MM-yyyy";
+            //this.dtBirthday.CustomFormat = "dd/MM/yyyy";
             this.dtBirthday.Location = new System.Drawing.Point(209, 254);
             this.dtBirthday.Margin = new System.Windows.Forms.Padding(4);
             this.dtBirthday.MaximumSize = new System.Drawing.Size(599, 29);

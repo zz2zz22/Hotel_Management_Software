@@ -227,7 +227,7 @@
             // 
             this.dtDateExpense.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.dtDateExpense.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDateExpense.CustomFormat = "dd-MM-yyyy";
+            //this.dtDateExpense.CustomFormat = "dd-MM-yyyy";
             this.dtDateExpense.Location = new System.Drawing.Point(463, 127);
             this.dtDateExpense.Margin = new System.Windows.Forms.Padding(4);
             this.dtDateExpense.Name = "dtDateExpense";

@@ -18,7 +18,7 @@ namespace dataprovider
             private set { DataProvider.instance = value; }
         }
 
-        private string connectionSTR = "Data Source=.\\;Initial Catalog = Hotel_Management; Integrated Security = True";
+        private string connectionSTR = "Data Source=.\\SQLEXPRESS01;Initial Catalog = Hotel_Management; Integrated Security = True";
 
         DataTable data = new DataTable();
         public DataTable ExecuteQuery(string query, object[] parameter = null)

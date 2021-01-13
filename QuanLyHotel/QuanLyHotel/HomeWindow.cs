@@ -51,7 +51,7 @@ namespace QuanLyHotel
 
                 btn.Click += btn_Click;
                 btn.Tag = item;
-                btn.Click += btnNew_Click;
+                //btn.Click += btnNew_Click;
                 // chỉnh màu trạng thái
                 btn.BackColor = Color.Aqua;
                 switch (item.Status)
@@ -82,23 +82,12 @@ namespace QuanLyHotel
             }
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            Button clickedButton = (Button)sender;
-            if (lbName.Text != "")
-            {
-                if (File.Exists("rm-" + lbName.Text + ".bmp"))
-                {
-                    openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-                    pictureBox1.Image = new Bitmap("rm-" + lbName.Text + ".bmp");
-                }
-                else
-                {
-                    pictureBox1.Image = null;
-                }
-            }
+        //private void btnNew_Click(object sender, EventArgs e)
+        //{
+        //    Button clickedButton = (Button)sender;
+            
 
-        }
+        //}
 
         #region LoadData
         void ShowInfo(string id)
@@ -181,6 +170,18 @@ namespace QuanLyHotel
         {
             string roomID = ((sender as Button).Tag as RoomDTO).Idr;
             ShowInfo(roomID);
+            if (lbName.Text != "")
+            {
+                if (File.Exists("rm-" + lbName.Text + ".bmp"))
+                {
+                    openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                    pictureBox1.Image = new Bitmap("rm-" + lbName.Text + ".bmp");
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
+            }
         }
         private void dtgvRoom_CellClick(object sender, DataGridViewCellEventArgs e)
         {

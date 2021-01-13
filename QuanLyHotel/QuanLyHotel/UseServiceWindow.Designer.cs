@@ -230,7 +230,7 @@
             this.dtDateService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtDateService.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtDateService.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDateService.CustomFormat = "dd-MM-yyyy";
+            //this.dtDateService.CustomFormat = "dd-MM-yyyy";
             this.dtDateService.Location = new System.Drawing.Point(169, 254);
             this.dtDateService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDateService.Name = "dtDateService";
