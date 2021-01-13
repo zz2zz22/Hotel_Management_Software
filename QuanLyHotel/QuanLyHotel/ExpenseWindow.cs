@@ -318,5 +318,27 @@ namespace QuanLyHotel
         {
             this.loadData();
         }
+
+        private void txtSearchExpense_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearchExpense.Text == "")
+            {
+                this.loadData();
+            }
+            else
+            {
+                string Key = txtSearchExpense.Text.Trim();
+                if (Key == null || Key == string.Empty || Key.Length == 0)
+                {
+                    List<ExpenseDTO> listTimKiem = expenseBUS.select();
+                    this.loadData(listTimKiem);
+                }
+                else
+                {
+                    List<ExpenseDTO> listTimKiem = expenseBUS.search(Key);
+                    this.loadData(listTimKiem);
+                }
+            }
+        }
     }
 }

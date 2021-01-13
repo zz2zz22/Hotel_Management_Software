@@ -50,7 +50,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -138,6 +141,7 @@
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(0, 26);
             this.lbName.TabIndex = 207;
+            this.lbName.TextChanged += new System.EventHandler(this.lbName_TextChanged);
             // 
             // label18
             // 
@@ -238,7 +242,7 @@
             this.btCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCheckOut.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btCheckOut.Location = new System.Drawing.Point(1059, 280);
+            this.btCheckOut.Location = new System.Drawing.Point(1073, 487);
             this.btCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.btCheckOut.MaximumSize = new System.Drawing.Size(151, 74);
             this.btCheckOut.MinimumSize = new System.Drawing.Size(151, 49);
@@ -256,7 +260,7 @@
             this.btCheckInRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCheckInRoom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCheckInRoom.ForeColor = System.Drawing.Color.White;
-            this.btCheckInRoom.Location = new System.Drawing.Point(890, 280);
+            this.btCheckInRoom.Location = new System.Drawing.Point(904, 487);
             this.btCheckInRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btCheckInRoom.MaximumSize = new System.Drawing.Size(151, 74);
             this.btCheckInRoom.MinimumSize = new System.Drawing.Size(151, 49);
@@ -273,7 +277,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(898, 421);
+            this.label5.Location = new System.Drawing.Point(898, 628);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(193, 38);
@@ -287,7 +291,7 @@
             this.btUseService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btUseService.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btUseService.ForeColor = System.Drawing.Color.White;
-            this.btUseService.Location = new System.Drawing.Point(903, 482);
+            this.btUseService.Location = new System.Drawing.Point(903, 689);
             this.btUseService.Margin = new System.Windows.Forms.Padding(4);
             this.btUseService.MaximumSize = new System.Drawing.Size(151, 74);
             this.btUseService.MinimumSize = new System.Drawing.Size(151, 49);
@@ -316,7 +320,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(963, 631);
+            this.label7.Location = new System.Drawing.Point(963, 619);
             this.label7.Margin = new System.Windows.Forms.Padding(4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 26);
@@ -331,10 +335,25 @@
             this.flpRoom.Size = new System.Drawing.Size(692, 465);
             this.flpRoom.TabIndex = 214;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(903, 272);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(349, 175);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 234;
+            this.pictureBox1.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flpRoom);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
@@ -362,6 +381,7 @@
             this.Size = new System.Drawing.Size(1331, 814);
             this.Load += new System.EventHandler(this.HomeWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +410,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.FlowLayoutPanel flpRoom;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

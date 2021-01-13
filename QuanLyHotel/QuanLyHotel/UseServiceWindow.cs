@@ -26,6 +26,7 @@ namespace QuanLyHotel
         }
         private ServiceBUS srvBus;
         private RoomServiceBUS roomServiceBUS;
+        private Double cost = 0;
 
         //
         //---- LOAD DATA
@@ -232,6 +233,50 @@ namespace QuanLyHotel
         private void UseServiceWindow_Load(object sender, EventArgs e)
         {
             this.loadData();
+        }
+
+        private void lbKindService_SelectedValueChanged(object sender, EventArgs e)
+        {
+            lbNameService.Items.Clear();
+            foreach (DataGridViewRow row in dtgvService.Rows)
+            {
+                if (row.Cells[1].Value.ToString() == lbKindService.Text)
+                {
+                    lbNameService.Items.Add(row.Cells[0].Value.ToString());
+                }
+            }
+        }
+
+        private void lbNameService_SelectedValueChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dtgvService.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == lbNameService.Text)
+                {
+                    lbCost.Text = row.Cells[2].Value.ToString();
+                    cost = Double.Parse(lbCost.Text);
+                }
+            }
+        }
+
+        private void txtNumberService_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumberService.Text != null)
+            {
+                if (lbCost.Text != null)
+                {
+
+                        lbCost.Text = (Double.Parse(txtNumberService.Text) * cost).ToString();
+                }
+                else
+                {
+                    lbCost.Text = "0";                       
+                }    
+            }
+            else
+            {
+                lbCost.Text = cost.ToString();
+            }
         }
 
         #endregion

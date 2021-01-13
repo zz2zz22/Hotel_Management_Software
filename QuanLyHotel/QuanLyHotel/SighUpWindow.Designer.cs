@@ -49,7 +49,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtRePassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtIdentifyCard = new System.Windows.Forms.TextBox();
@@ -65,6 +64,8 @@
             this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider11 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider12 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtGender = new System.Windows.Forms.ComboBox();
             this.MoveBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider12)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -335,17 +337,6 @@
             this.txtName.Size = new System.Drawing.Size(332, 30);
             this.txtName.TabIndex = 40;
             // 
-            // txtGender
-            // 
-            this.txtGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGender.Location = new System.Drawing.Point(331, 298);
-            this.txtGender.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtGender.Size = new System.Drawing.Size(332, 30);
-            this.txtGender.TabIndex = 41;
-            // 
             // txtPhone
             // 
             this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -440,16 +431,32 @@
             // 
             this.errorProvider11.ContainerControl = this;
             // 
+            // errorProvider12
+            // 
+            this.errorProvider12.ContainerControl = this;
+            // 
+            // txtGender
+            // 
+            this.txtGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.txtGender.FormattingEnabled = true;
+            this.txtGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.txtGender.Location = new System.Drawing.Point(331, 299);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(332, 31);
+            this.txtGender.TabIndex = 46;
+            // 
             // SighUpWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 508);
+            this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtIdentifyCard);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtRePassword);
             this.Controls.Add(this.txtPassword);
@@ -484,6 +491,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,7 +518,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtRePassword;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtIdentifyCard;
@@ -526,5 +533,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider9;
         private System.Windows.Forms.ErrorProvider errorProvider10;
         private System.Windows.Forms.ErrorProvider errorProvider11;
+        private System.Windows.Forms.ErrorProvider errorProvider12;
+        private System.Windows.Forms.ComboBox txtGender;
     }
 }

@@ -50,12 +50,19 @@
             this.btDeleteCustomer = new System.Windows.Forms.Button();
             this.btLoadCustomer = new System.Windows.Forms.Button();
             this.txtSearchCustomer = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cboCamera = new System.Windows.Forms.ComboBox();
+            this.btnCapture = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider5
@@ -126,7 +133,7 @@
             this.dtBirthday.Name = "dtBirthday";
             this.dtBirthday.Size = new System.Drawing.Size(599, 29);
             this.dtBirthday.TabIndex = 87;
-            this.dtBirthday.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
+            this.dtBirthday.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -284,11 +291,90 @@
             this.txtSearchCustomer.Name = "txtSearchCustomer";
             this.txtSearchCustomer.Size = new System.Drawing.Size(409, 39);
             this.txtSearchCustomer.TabIndex = 92;
+            this.txtSearchCustomer.TextChanged += new System.EventHandler(this.txtSearchCustomer_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(967, 167);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(349, 227);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 93;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cboCamera
+            // 
+            this.cboCamera.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.cboCamera.FormattingEnabled = true;
+            this.cboCamera.Location = new System.Drawing.Point(967, 126);
+            this.cboCamera.Name = "cboCamera";
+            this.cboCamera.Size = new System.Drawing.Size(349, 33);
+            this.cboCamera.TabIndex = 94;
+            // 
+            // btnCapture
+            // 
+            this.btnCapture.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnCapture.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapture.Font = new System.Drawing.Font("Times New Roman", 16.25F, System.Drawing.FontStyle.Bold);
+            this.btnCapture.ForeColor = System.Drawing.Color.White;
+            this.btnCapture.Location = new System.Drawing.Point(967, 407);
+            this.btnCapture.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCapture.MinimumSize = new System.Drawing.Size(111, 39);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(111, 39);
+            this.btnCapture.TabIndex = 95;
+            this.btnCapture.Text = "Start";
+            this.btnCapture.UseVisualStyleBackColor = false;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnOpen.BackColor = System.Drawing.Color.Firebrick;
+            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpen.Font = new System.Drawing.Font("Times New Roman", 16.25F, System.Drawing.FontStyle.Bold);
+            this.btnOpen.ForeColor = System.Drawing.Color.White;
+            this.btnOpen.Location = new System.Drawing.Point(1086, 407);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOpen.MinimumSize = new System.Drawing.Size(111, 39);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(111, 39);
+            this.btnOpen.TabIndex = 96;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = false;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSave.BackColor = System.Drawing.Color.Firebrick;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16.25F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(1205, 407);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.MinimumSize = new System.Drawing.Size(111, 39);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(111, 39);
+            this.btnSave.TabIndex = 97;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // CustomerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.btnCapture);
+            this.Controls.Add(this.cboCamera);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSearchCustomer);
             this.Controls.Add(this.btLoadCustomer);
             this.Controls.Add(this.btDeleteCustomer);
@@ -308,12 +394,14 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerWindow";
             this.Size = new System.Drawing.Size(1784, 927);
+            this.Load += new System.EventHandler(this.CustomerWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,5 +430,11 @@
         private System.Windows.Forms.Button btDeleteCustomer;
         private System.Windows.Forms.Button btEditCustomer;
         private System.Windows.Forms.Button btAddCustomer;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button btnCapture;
+        private System.Windows.Forms.ComboBox cboCamera;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -34,7 +34,6 @@
             this.lbSumCost = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.lbCostService = new System.Windows.Forms.Label();
-            this.lbCheckOut = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.lbCostRoom = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbIDB = new System.Windows.Forms.Label();
+            this.lbCheckOut = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,17 +133,6 @@
             this.lbCostService.Size = new System.Drawing.Size(0, 23);
             this.lbCostService.TabIndex = 268;
             this.lbCostService.Visible = false;
-            // 
-            // lbCheckOut
-            // 
-            this.lbCheckOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbCheckOut.AutoSize = true;
-            this.lbCheckOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.lbCheckOut.Location = new System.Drawing.Point(172, 111);
-            this.lbCheckOut.Margin = new System.Windows.Forms.Padding(4);
-            this.lbCheckOut.Name = "lbCheckOut";
-            this.lbCheckOut.Size = new System.Drawing.Size(0, 23);
-            this.lbCheckOut.TabIndex = 267;
             // 
             // label21
             // 
@@ -329,6 +318,7 @@
             this.txtSearchBill.Name = "txtSearchBill";
             this.txtSearchBill.Size = new System.Drawing.Size(364, 31);
             this.txtSearchBill.TabIndex = 276;
+            this.txtSearchBill.TextChanged += new System.EventHandler(this.txtSearchBill_TextChanged);
             // 
             // label1
             // 
@@ -365,11 +355,24 @@
             this.lbIDB.Size = new System.Drawing.Size(0, 23);
             this.lbIDB.TabIndex = 279;
             // 
+            // lbCheckOut
+            // 
+            this.lbCheckOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbCheckOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.lbCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.lbCheckOut.Location = new System.Drawing.Point(176, 105);
+            this.lbCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.lbCheckOut.Name = "lbCheckOut";
+            this.lbCheckOut.Size = new System.Drawing.Size(199, 30);
+            this.lbCheckOut.TabIndex = 280;
+            this.lbCheckOut.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
+            // 
             // CheckOutWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 583);
+            this.Controls.Add(this.lbCheckOut);
             this.Controls.Add(this.lbIDB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btLoadCustomer);
@@ -382,7 +385,6 @@
             this.Controls.Add(this.lbSumCost);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.lbCostService);
-            this.Controls.Add(this.lbCheckOut);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.lbCostRoom);
@@ -414,7 +416,6 @@
         private System.Windows.Forms.Label lbSumCost;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label lbCostService;
-        private System.Windows.Forms.Label lbCheckOut;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lbCostRoom;
@@ -433,5 +434,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbIDB;
+        public System.Windows.Forms.DateTimePicker lbCheckOut;
     }
 }

@@ -284,6 +284,28 @@ namespace QuanLyHotel
             this.loadData();
         }
 
+        private void txtSearchCustomer_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearchCustomer.Text == "")
+            {
+                this.loadData();
+            }
+            else
+            {
+                string Key = txtSearchCustomer.Text.Trim();
+                if (Key == null || Key == string.Empty || Key.Length == 0)
+                {
+                    List<CustomerDTO> listTimKiem = ctmBus.select();
+                    this.loadData(listTimKiem);
+                }
+                else
+                {
+                    List<CustomerDTO> listTimKiem = ctmBus.search(Key);
+                    this.loadData(listTimKiem);
+                }
+            }
+        }
+
         private void btLoadCustomer_Click(object sender, EventArgs e)
         {
             if (txtSearchCustomer.Text == "")

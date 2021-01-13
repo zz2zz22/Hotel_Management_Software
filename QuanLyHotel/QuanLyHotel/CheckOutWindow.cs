@@ -309,5 +309,41 @@ namespace QuanLyHotel
         {
             this.loadData();
         }
+
+        private void txtSearchBill_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearchBill.Text == "")
+            {
+                this.loadData();
+            }
+            else
+            {
+                string Key = txtSearchBill.Text.Trim();
+                if (Key == null || Key == string.Empty || Key.Length == 0)
+                {
+                    List<BillDTO> listTimKiem = bllBus.select();
+                    this.loadData(listTimKiem);
+                }
+                else
+                {
+                    List<BillDTO> listTimKiem = bllBus.search(Key);
+                    this.loadData(listTimKiem);
+                }
+            }
+            foreach (DataGridViewRow row in dtgvBill.Rows)
+            {
+                CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dtgvBill.DataSource];
+                myCurrencyManager.SuspendBinding();
+
+                if ((row.Cells[1].Value.ToString()) == "a")
+                {
+                    row.Visible = false;
+                    lbCheckOut.Text += "5";
+                }
+                myCurrencyManager.ResumeBinding();
+                myCurrencyManager.Refresh();
+            }
+            dtgvBill.Refresh();
+        }
     }
 }
