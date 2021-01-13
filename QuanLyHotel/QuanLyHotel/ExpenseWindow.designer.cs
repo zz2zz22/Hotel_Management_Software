@@ -231,7 +231,7 @@
             this.dtDateExpense.Name = "dtDateExpense";
             this.dtDateExpense.Size = new System.Drawing.Size(284, 35);
             this.dtDateExpense.TabIndex = 212;
-            this.dtDateExpense.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
+            this.dtDateExpense.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
             // 
             // label12
             // 

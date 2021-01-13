@@ -233,7 +233,7 @@
             this.dtDateService.Name = "dtDateService";
             this.dtDateService.Size = new System.Drawing.Size(207, 30);
             this.dtDateService.TabIndex = 236;
-            this.dtDateService.Value = new System.DateTime(2021, 1, 9, 0, 0, 0, 0);
+            this.dtDateService.Value = new System.DateTime(2021, 1, 11, 0, 0, 0, 0);
             // 
             // txtNumberService
             // 
